@@ -1,0 +1,1034 @@
+@import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 80px;
+    height: 100%;
+    background: rgba(255, 165, 0, 0.5); /* Orange with 50% opacity */
+    backdrop-filter: blur(40px);
+    border-right: 2px solid rgba(255, 255, 255, .2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    padding: 6px 14px;
+    transition: width 0.5s ease;
+    z-index: 1000; /* Ensure a high z-index */
+}
+
+.sidebar.active {
+    width: 260px;
+}
+
+.sidebar .logo-menu {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+}
+
+.sidebar .logo-menu .logo {
+    font-size: 25px;
+    color: #fff;
+    pointer-events: none;
+    opacity: 0;
+    transition: .3s;
+}
+
+.sidebar.active .logo-menu .logo {
+    opacity: 1;
+    transition-delay: .2s;
+
+}
+
+.sidebar .logo-menu .toggle-btn {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color: #fff;
+    text-align: center;
+    line-height: 40px; 
+    cursor:auto;
+    transition: .5s;
+}
+
+.sidebar.active .logo-menu .toggle-btn {
+    left: 90%;
+}
+
+.sidebar .list {
+    margin-top: 10px;
+    color: #000; /* Set text color to black */
+}
+
+.list .list-item {
+    list-style: none;
+    width: 100%;
+    height: 50px;
+    margin: 5px 0;
+    line-height: 50px;
+}
+
+.list .list-item a {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    color: #000; /* Set link text color to black */
+    text-decoration: none;
+    border-radius: 6px;
+    white-space: nowrap;
+    transition: .5s;
+}
+
+.list .list-item.active a,
+.list .list-item a:hover {
+    background: rgba(0, 0, 0, .2); /* Set background to black with 20% opacity */
+}
+
+.list .list-item a i {
+    min-width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+}
+
+.sidebar .link-name {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s;
+}
+
+.sidebar.active .link-name {
+    opacity: 1;
+    pointer-events: auto;
+    transition-delay: calc(.1s * var(--i));
+}
+
+.sidebar.active .link-name {
+    opacity: 1;
+    pointer-events: auto;
+    transition-delay: calc(.1s * var(--i));
+}
+
+body {
+    color: white;
+}
+
+
+
+/* CSS for mobile navigation menu */
+.mobile-navbar {
+    display: none;
+}
+
+.mobile-navbar.active {
+    display: block;
+}
+
+.header {
+    width: 95%;
+    position: fixed;
+    top: 3rem; /* Adjust the top value to move the header downward */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    box-shadow: 0 1rem 1rem rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 5rem;
+    background: #fff;
+}
+
+.header-active{
+    top: 0;
+    width: 100%;
+}
+
+.header .logo{
+    font-size: 2rem;
+    font-weight: bolder;
+    color: black;
+}
+
+.header .logo i{
+    color: orange;
+}
+
+.header .navbar a{
+    font-size: 1.4rem;
+    color: black;
+    margin: 0 1rem;
+}
+
+.header .navbar a:hover{
+    color: orange;
+}
+
+.header .icons div,
+.header .icons a{
+    font-size: 2rem;
+    margin-left: 2rem;
+    color: #fff;
+    cursor: pointer;
+    -webkit-text-stroke: .1rem black;
+}
+
+.header .icons div:hover,
+.header .icons a:hover{
+    -webkit-text-stroke: .1rem orange;
+}
+
+.header .search-form{
+    position: absolute;
+    top: 115%; right: -105%;
+    width: 50rem;
+    height: 5.5rem;
+    background: #fff;
+    border-radius: .5rem;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+    border: .1rem solid rgba(0,0,0,0.3);
+}
+
+.header .search-form.active{
+    right: 2rem;
+    transition: .4s linear;
+}
+
+.header .search-form input{
+    width: 100%;
+    height: 100%;
+    font-size: 1.6rem;
+    text-transform: none;
+    color: orange;
+    padding: 0 1.2rem;
+}
+
+.header .search-form label{
+    font-size: 2.2rem;
+    color: #fff;
+    cursor: pointer;
+    -webkit-text-stroke: .1rem black;
+    margin-right: 1.7rem;
+}
+
+.header .search-form label:hover{
+    -webkit-text-stroke: .1rem orange;
+}
+
+#menu-btn{
+    display: none;
+}
+
+.marquee-container {
+    background-color: rgba(64, 64, 64, 0.3); /* Dark gray background with opacity */
+    padding: 2px; /* Add padding to give some space around the marquee */
+    position: fixed; /* Set position to fixed */
+    top: 0; /* Position it at the top */
+    left: 0; /* Position it at the left */
+    width: 100%; /* Make it full width */
+    z-index: 999; /* Ensure it stays above other content */
+}
+
+.marquee-container marquee {
+    color: white; /* Set the font color of the marquee text to white */
+    text-decoration: none;
+}
+
+
+
+/* end */
+
+.logo{
+    position: relative;
+    font-size: 25px;
+    color: orange;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.logo::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    animation: showRight 1s ease forwards;
+    animation-delay: .4s;
+
+}
+
+.navbar a{
+    font-size: 10px;
+    margin-left: 0.5rem;
+    color: black;
+    cursor: pointer;
+    text-decoration: none;
+    transition: .3s;
+}
+.navbar a::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    animation: showRight 1s ease forwards;
+    animation-delay: .4s;
+}
+.navbar a:hover,
+.navbar a.active {
+    color: orange;
+
+}
+
+.home-image {
+    position: absolute;
+    top: 58%;
+    right: 5%; /* Adjust the distance from the right side */
+    width: 60%; /* Adjust the width as per your requirement */
+    max-width: 650px;
+    height: auto; /* To maintain aspect ratio */
+    border-radius: 8px; /* Optional: Adds rounded corners */
+    box-shadow: 0 2rem 3rem rgba(0, 0, 0, 0.4);
+    z-index: 1; /* Ensure it appears above other elements */
+    transform: translateY(-50%); /* Centers vertically */
+}
+
+.home-image .single-image {
+    width: 100%; /* Make the single image container fill the width of its parent */
+}
+
+.home-image .single-image img {
+    width: 100%; /* Set the width of the images to fill their containers */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.home-image:hover {
+    background-color: orange; /* Change the background color to orange */
+    opacity: 0.6; /* Adjust the opacity as per your preference */
+    transition: background-color 0.5s, opacity 0.5s; /* Add smooth transition */
+}
+
+.home-image img {
+    width: 100%; /* Ensure the image fills its container */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.home-image a {
+    display: block; /* Make the link fill its container */
+    width: 100%;
+}
+
+.home-image .single-image video {
+    width: 100%; /* Set the width of the video to fill its container */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.prev,
+.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    color: gray;
+    border: none;
+    padding: 20px;
+    cursor: pointer;
+    font-size: 70px;
+    transition: background-color 0.5s ease;
+    z-index: 2; /* Ensure buttons are above the image */
+}
+
+.prev:hover,
+.next:hover {
+    color: orange;
+}
+
+.prev {
+    left: -75px; /* Adjust the distance from the left */
+}
+
+.next {
+    right: -75px; /* Adjust the distance from the right */
+}
+
+
+.home {
+    display: flex;
+    background: white;
+    background-size: cover;
+    background-position: center;
+    align-items: center;
+    height: 100vh;
+    padding: 0 10%;
+    /* Adjust the position by using the left property */
+    position: relative;
+    left: -20px; /* Adjust this value as per your preference */
+}
+
+.home-content {
+    max-width: 650px;
+
+}
+
+.home-content h1 {
+    margin-top: 80px;
+    line-height: 1.2;
+    color: black;
+    font-size: 50px;
+    font-weight: 700;
+}
+
+
+.home-content h1::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    animation: showRight 3.5s ease forwards;
+    animation-delay: .4s;
+}
+
+.home-content h3 {
+    font-size: 32px;
+    font-weight: 700;
+    color: orange;
+}
+
+.home-content p {
+    font-size: 22px;
+    margin: 20px 0 40px;
+    color: black;
+    text-align: justify;
+    margin-right: 100px;
+}
+
+
+.home-content .btn-box {
+    display: flex;
+    justify-content: space-between;
+    width: 345px;
+    height: 50px;
+}
+
+.btn-box a {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 180px;
+    height: 100%;
+    background: orange;
+    border: 2px solid orange;
+    border-radius: 8px;
+    font-size: 19px;
+    color: black;
+    font-weight: 600;
+    letter-spacing: 1px;
+    z-index: 1;
+    overflow: hidden;
+    transition: .5s;
+    box-shadow: 0 1.5rem 1.5rem rgba(0, 0, 0, 0.2); /* Optional: Adds shadow */
+    text-decoration: none;
+
+}
+
+.btn-box a:hover {
+    color: orange;
+}
+
+.btn-box a:nth-child(2) {
+    background: transparent;
+    color: orange;
+
+}
+
+.btn-box a:nth-child(2):hover {
+    color: white;
+}
+
+
+.btn-box a:nth-child(2)::before {
+    background: orange;
+
+}
+
+
+.btn-box a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: white;
+    z-index: -1;
+    transition: .5s;
+
+}
+
+.btn-box a:hover::before {
+    width: 100%;
+}
+
+.home-sci {
+    position: absolute;
+    bottom: 40px;
+    width: 170px;
+    display: flex;
+    justify-content: space-between;
+    left: 9%;
+
+}
+
+.home-sci a {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid orange;
+    border-radius: 50%;
+    font-size: 20px;
+    color: orange;
+    text-decoration: none;
+    z-index: 1;
+    overflow: hidden;
+    transition: .5s;
+    box-shadow: 0 1.5rem 1.5rem rgba(0, 0, 0, 0.2); /* Optional: Adds shadow */
+
+}
+
+.home-sci a:hover {
+    color: black;
+}
+
+.home-sci a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: orange;
+    z-index: -1;
+    transition: .5s;
+
+
+}
+
+.home-sci a:hover::before {
+    width: 100%;
+}
+
+.home-imgHover {
+    position: absolute;
+    top: 0;
+    right: 0px;
+    width: 1000px;
+    height: 100%;
+    background: transparent;
+    transition: 3s;
+    
+}
+
+.home-imgHover:hover {
+    background: rgba(255, 165, 0, 0.5); /* Orange with 50% opacity */
+    opacity: .8;
+
+
+}
+
+/* Team Members */
+.review .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the items horizontally */
+}
+
+.review .box {
+    width: calc(33.33% - 10px);
+    margin-bottom: 20px;
+    /* Other styles for the box */
+}
+
+.review .box-container .box{
+    margin: 4rem 0;
+    padding-bottom: 2rem;
+    text-align: center;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+}
+
+.review .box-container .box .image{
+    margin-top: -5rem;
+}
+
+.review .box-container .box .image img{
+    height: 10rem;
+    width: 10rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+.review .box-container .box .content h3{
+    font-size: 2rem;
+    color: #10221b;
+}
+
+
+
+.heading{
+    font-size: 3.5rem;
+    color: orange;
+    padding-bottom: 2rem;
+    text-align: center;
+}
+
+.heading span{
+    color: #10221b;
+}
+
+.footer {
+    background: orange;
+    padding: 20px 0; /* Padding within the footer */
+    margin-top: 10px; /* Decrease margin above the footer */
+    margin-bottom: 10px; /* Decrease margin below the footer */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+}
+
+.footer .box-container {
+    display: flex; /* Use flexbox */
+    flex-wrap: wrap; /* Allow items to wrap */
+    gap: 30px; /* Adjust the gap between boxes */
+    max-width: 1200px; /* Optional: Limit maximum width */
+    justify-content: space-between; /* Evenly distribute space between boxes */
+}
+
+.footer .box {
+    flex: 1; /* Allow boxes to grow equally */
+    padding: 0 10px; /* Adjust padding as needed */
+}
+
+.footer .box h3,
+.footer .box a {
+    font-size: 2.2rem; /* Apply the font size to both elements */
+    color: black; /* Apply the color to both elements */
+    padding: 1rem 0; /* Apply the padding to both elements */
+    margin: 0 75px; /* Add margin on left and right to both elements */
+}
+
+.footer .box a {
+    display: block; /* Apply display block to anchor elements */
+    font-size: 1.4rem; /* Font size specific to anchor elements */
+    color: black; /* Color specific to anchor elements */
+    padding: 1rem 0; /* Padding specific to anchor elements */
+    text-decoration: none; /* Remove underline from anchor elements */
+}
+
+.footer .box a:hover {
+    color: gray;
+}
+
+.footer .box a i {
+    color: #10221b;
+    padding-right: .5rem;
+}
+
+.credit {
+    text-align: center;
+    background: #10221b;
+    color: #fff;
+    font-size: 2rem;
+}
+
+/* Key Frame Animation */
+
+@keyframes showRight {
+    100%{
+        width: 0;
+
+    }
+}
+@media(max-width: 1440px){
+    .home .home-content h1{
+        position: relative;
+        top: -50px;
+        font-size: 50px;
+        justify-content: center;
+        align-items: center;
+    }
+    .home .home-content h3{
+        position: relative;
+        top:-40px;
+        font-size: 25px;
+    }
+    .home .home-content p{
+        position: relative;
+        top: -20px;
+        font-size: 25px;
+        text-align: justify;
+        margin-right: 200px;
+    }
+    .home .home-content .btn-box a{
+        position: relative;
+        top: 10px;
+        font-size: 20px;
+    
+    }
+
+    .home-image {
+        width: 1000px; /* Adjust the width as per your requirement */
+        top: 50%; /* Adjust the percentage to move the image down */
+        left: 70%; /* Adjust the percentage to center the image horizontally */
+        transform: translate(-50%, -50%); /* Center the image horizontally and vertically */
+        position: absolute; /* Ensure proper positioning */
+    }
+
+    .home-image video {
+        width: 100%; /* Set the width to match the width of the container */
+        height: auto; /* Allow the height to adjust automatically */
+        border-radius: 10px; /* Apply border radius */
+    }
+    
+    .home-image img {
+        width: 100%; /* Set the width of the image to fill its container */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .home-sci {
+        display: flex;
+        justify-content: center; /* Center horizontally */
+    }
+    
+    .home-sci a {
+        display: flex; /* Display as flex to center vertically */
+        align-items: center; /* Center vertically */
+        margin: 0 10px; /* Optional: Add spacing between icons */
+        top: 20w    px;
+        left: -15px;
+    }
+
+    #menu-btn{
+        display: inline-block;
+    }
+
+    .header .navbar{
+        position: absolute;
+        top: 99%; left: 0; right: 0;
+        background: #fff;
+        border-top: .1rem solid rgba(0,0,0,0.3);
+        border-bottom: .1rem solid rgba(0,0,0,0.3);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+
+    .header .navbar.active{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    .header .navbar a{
+        font-size: 2rem;
+        margin: 2rem;
+        display: block;
+    }
+
+    .send .container .image img{
+        width: 100%;
+    }
+
+}
+@media(max-width: 1024px){
+    .home .home-content h1{
+        position: relative;
+        top: 5px;
+        font-size: 40px;
+        justify-content: center;
+        align-items: center;
+    }
+    .home .home-content h3{
+        position: relative;
+        top: 5px;
+        font-size: 25px;
+    }
+    .home .home-content p{
+        position: relative;
+        top: -20px;
+        font-size: 18px;
+        text-align: justify;
+        margin-right: 300px;
+    }
+    .home .home-content .btn-box a{
+        position: relative;
+        top: -50px;
+        font-size: 20px;
+    }
+
+    .home-image {
+        width: 500px; /* Adjust the width as per your requirement */
+        top: 60%; /* Adjust the percentage to move the image down */
+        left: 73%; /* Adjust the percentage to center the image horizontally */
+        transform: translate(-50%, -50%); /* Center the image horizontally and vertically */
+        position: absolute; /* Ensure proper positioning */
+    }
+    
+    .home-image img {
+        width: 100%; /* Set the width of the image to fill its container */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .home-sci {
+        display: flex;
+        position: absolute;
+        justify-content: center; /* Center horizontally */
+    }
+    
+    .home-sci a {
+        display: flex; /* Display as flex to center vertically */
+        align-items: center; /* Center vertically */
+        margin: 0 10px; /* Optional: Add spacing between icons */
+        top: 20w    px;
+        left: -15%;
+    }
+
+    #menu-btn{
+        display: inline-block;
+    }
+
+    .header .navbar{
+        position: absolute;
+        top: 99%; left: 0; right: 0;
+        background: #fff;
+        border-top: .1rem solid rgba(0,0,0,0.3);
+        border-bottom: .1rem solid rgba(0,0,0,0.3);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+
+    .header .navbar.active{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    .header .navbar a{
+        font-size: 2rem;
+        margin: 2rem;
+        display: block;
+    }
+
+    .send .container .image img{
+        width: 100%;
+    }
+
+}
+@media(max-width: 991px){
+    .review .box {
+        width: calc(50% - 10px);
+    }
+
+    html{
+        font-size: 55%;
+    }
+
+    .header{
+        padding: 2rem;
+    }
+
+    section{
+        padding: 2rem;
+    }
+
+    .home .slides-container .slide .content{
+        margin-top: 5rem;
+    }
+
+    .home #slide-next,
+    .home #slide-prev{
+        top: 95%;
+    }
+
+    .home #slide-prev{
+        left: auto;
+        right: 8rem;
+    }
+    .send .container .content{
+        padding-top: 2rem;
+    }
+}
+
+@media(max-width: 768px){
+
+    .home .home-content h1{
+        position: relative;
+        top: -140px;
+        font-size: 30px;
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+    .home .home-content h3{
+        position: relative;
+        top: -140px;
+        font-size: 20px;
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+    .home .home-content p{
+        position: relative;
+        top: -160px;
+        font-size: 15px;
+        text-align: justify;
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+    .home .home-content .btn-box a{
+        position: relative;
+        top: -180px;
+        font-size: 15px;
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+
+    .home-image {
+        width: 400px; /* Adjust the width as per your requirement */
+        top: 70%; /* Adjust the percentage to move the image down */
+        left: 50%; /* Adjust the percentage to center the image horizontally */
+        transform: translate(-50%, -50%); /* Center the image horizontally and vertically */
+        position: absolute; /* Ensure proper positioning */
+    }
+    
+    .home-image img {
+        width: 100%; /* Set the width of the image to fill its container */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .home-sci {
+        display: flex;
+        justify-content: center; /* Center horizontally */
+    }
+    
+    .home-sci a {
+        display: flex; /* Display as flex to center vertically */
+        align-items: center; /* Center vertically */
+        margin: 0 10px; /* Optional: Add spacing between icons */
+        top: 50w    px;
+        left: -10px;
+    }
+
+    #menu-btn{
+        display: inline-block;
+    }
+
+    .header .navbar{
+        position: absolute;
+        top: 99%; left: 0; right: 0;
+        background: #fff;
+        border-top: .1rem solid rgba(0,0,0,0.3);
+        border-bottom: .1rem solid rgba(0,0,0,0.3);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+
+    .header .navbar.active{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    .header .navbar a{
+        font-size: 2rem;
+        margin: 2rem;
+        display: block;
+    }
+
+    .send .container .image img{
+        width: 100%;
+    }
+
+
+}
+
+@media(max-width: 450px){
+    html{
+        font-size: 50%;
+    }
+}
+
+@media(max-width: 425px){
+    .header .icons a{
+        font-size: 17px;
+    }
+    .home .home-content h1 {
+        position: relative;
+        top: -150px;
+        font-size: 25px;
+        left: 20px;
+        white-space: nowrap; /* This property prevents line breaks */
+    }
+    .home .home-content h3{
+        position: relative;
+        top: -135px;
+        font-size: 20px;
+        left: 20px;
+    }
+    .home .home-content p {
+        position: relative;
+        top: -135px;
+        font-size: 15px;
+        left: 20px;
+        text-align: justify;
+    }
+    .home .home-content .btn-box a{
+        position: relative;
+        top: -145px;
+        font-size: 15px; /* Adjust font size to make the button smaller */
+        padding: 8px 12px; /* Adjust padding to make the button smaller */
+        left: 20px;
+    }
+
+    .home-image {
+        width: 4px; /* Adjust the width as per your requirement */
+        top: 50%; /* Adjust the percentage to move the image down */
+        left: 71%; /* Adjust the percentage to center the image horizontally */
+        transform: translate(-50%, -50%); /* Center the image horizontally and vertically */
+        position: absolute; /* Ensure proper positioning */
+    }
+    
+    .home-image img {
+        width: 50%; /* Set the width of the image to fill its container */
+        height: 80%; /* Maintain aspect ratio */
+    }
+    .home-sci {
+        position: relative;
+        display: flex;
+        justify-content: center; /* Center horizontally */
+    }
+    
+    .home-sci a {
+        font-size: 20px;
+        position: relative;
+        display: flex; /* Display as flex to center vertically */
+        align-items: center; /* Center vertically */
+        margin: 0 10px; /* Optional: Add spacing between icons */
+        top: -58px;
+        left: -185px;
+        width: 32px; /* Adjust the width of the circle */
+        height: 32px; /* Adjust the height of the circle */
+        border-radius: 50%; /* Ensure the container is a circle */
+    }
+}

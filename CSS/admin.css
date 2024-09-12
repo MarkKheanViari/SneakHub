@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif;
+}
+/* Container */
+.form-container {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center; /* Center align content */
+}
+
+/* Form Group */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Label */
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Input, Textarea, Select */
+input[type="text"],
+textarea,
+select,
+input[type="file"] {
+    width: 100%; /* Make all inputs and textareas 100% width */
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #faab00;
+    border-radius: 5px;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4);
+}
+
+/* Submit Button */
+button[type="submit"] {
+    background-color: #f5ab0c;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: black;
+    color: orange;
+}

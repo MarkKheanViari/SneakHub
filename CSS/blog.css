@@ -1,0 +1,83 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.video-header {
+  position: relative;
+  height: 400px; /* Adjust height as needed */
+  overflow: hidden;
+}
+
+.video-container {
+  position: absolute;
+  top: -220px;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 2rem 2rem rgba(0, 0, 0, 0.4);
+  height: 100%;
+}
+
+.blog-section {
+  background-color: #f9f9f9;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.blog-section h2 {
+  margin-top: 0;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  
+}
+
+.blog-section img {
+  margin-left: -17%;
+  max-width: 135%;
+  height: auto;
+  box-shadow: 0 2rem 2rem rgba(0, 0, 0, 0.4);
+}
+
+.blog-section img:hover {
+  transform: scale(1.05); /* Adjust the scale factor as needed */
+}
+
+.blog-section p {
+  margin-bottom: 0;
+}
+
+.back-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background-color: orange;
+  color: #fff;
+  border-radius: 50%;
+  text-decoration: none;
+  z-index: 999; /* Ensure it's above other content */
+}
+
+.back-button:hover {
+  background-color: white;
+  color: orange;
+}
+
+.back-button::before {
+  content: "<";
+  font-size: 20px;
+}
+

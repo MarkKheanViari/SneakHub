@@ -1,0 +1,127 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.service {
+    font-family: 'poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #ffffff;
+    padding: 20px; /* Added padding */
+}
+
+.service h1{
+    font-size: 3em;
+    margin: 25px;
+}
+
+.service1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centering the items */
+    max-width: 1200px; /* Adjusted maximum width */
+}
+
+.service2 {
+    min-height: 220px;
+    width: 45%; /* Adjusted width to fit two columns */
+    padding: 30px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #ffffff;
+    margin: 10px;
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.service2 i {
+    margin: 20px;
+    color: #fc7425;
+    font-size: 2em; /* Adjust the font size to make the icons bigger */
+}
+
+.service2 i{
+    margin: 20px;
+    color: #fc7425;
+}
+.service2 h2{
+    margin-bottom: 12px;
+    font-weight: 400;
+    text-align: center;
+}
+.service2 p{
+    color: #756e65;
+    text-align: center;
+}
+.service2:hover i,
+.service2:hover p{
+    color: #fff;
+}
+.service2:hover h2{
+    font-weight: 600;
+}
+.service2:nth-child(1):hover,
+.service2:nth-child(2):hover,
+.service2:nth-child(3):hover,
+.service2:nth-child(4):hover {
+    background: orange;
+    background-size: cover;
+    box-shadow: 0 0 100px orange;
+}
+
+.back-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    background-color: white;
+    box-shadow: 0 2rem 3rem rgba(0, 0, 0, 0.4);
+    color: orange;
+    border-radius: 50%;
+    text-decoration: none;
+    z-index: 999; /* Ensure it's above other content */
+  }
+  
+  .back-button:hover {
+    background-color: orange;
+    color: white;
+  }
+  
+  .back-button::before {
+    content: "<";
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+@media(max-width:991px){
+    .service{
+        padding: 25px;
+    }
+    .service h1{
+        font-size: 2.5em;
+        font-weight: 600;
+    }
+    .service1{
+        flex-direction: column;
+        width: 100%;
+    }
+    .service2{
+        min-width: 300px;
+        margin: 10px auto;
+    }
+}
+
+@media(max-width: 425px){
+    .service h1, .service p{
+        text-align: center;
+    }
+}
