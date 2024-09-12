@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>About Us</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+
+  <link rel="stylesheet" type="text/css" href="CSS/about.css">
+</head>
+<body>
+  <a href="index.html" class="back-button"></a> <!-- Back button -->
+  
+  <div class="section">
+    <div class="container">
+      <div class="content-section">
+        <div class="title">
+          <h1>About Us</h1>
+        </div>
+        <div class="content">
+          <h3> Welcome to SneakHub, your go-to destination for discovering the perfect pair of shoes for every member of the family. </h3>
+          <p class="text"> At SneakHub, we're passionate about footwear, and we're dedicated to providing a diverse selection of styles to suit every taste and occasion.
+            <span class="additional-content">Founded with the vision of creating a convenient platform for shoe enthusiasts to explore and find their ideal footwear, SneakHub offers an extensive catalog featuring sneakers, sporty shoes, walking shoes, and fashion shoes for men, women, and children. </span></p>
+          <div class="button">
+            <a href="#" onclick="toggleContent()">Read More</a>
+          </div>
+        </div>
+        <div class="social">
+          <a href="https://www.facebook.com/share/o5ikLeUPG2ng454uc/?mibextid=qi2Omg"><i class="fab fa-facebook"></i></a>
+          <a href="https://twitter.com/SneakHub"> <i class="fab fa-twitter"></i></a>
+          <a href="https://www.instagram.com/sneakhub.01?igsh=MTNoaThydTVzN3N1MQ%3D%3D&utm_source=qr"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="image-section">
+        <a href="index.html">
+            <img src="logoSH.png" alt="">
+        </a>  
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleContent() {
+      var additionalContent = document.querySelector('.additional-content');
+      var readMoreButton = document.querySelector('.button a');
+      
+      if (additionalContent.style.display === 'none') {
+        additionalContent.style.display = 'block';
+        readMoreButton.textContent = 'Show Less';
+      } else {
+        additionalContent.style.display = 'none';
+        readMoreButton.textContent = 'Read More';
+      }
+    }
+  </script>
+
+</body>
+</html>

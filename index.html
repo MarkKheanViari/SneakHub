@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        SneakHub
+    </title>  
+    <link rel="stylesheet" href="CSS/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- swiper js cdn -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <!-- custom css file link  -->
+
+    <script>
+        function toggleMenu() {
+            const navbar = document.querySelector('.navbar');
+            navbar.classList.toggle('active');
+        }
+    </script>
+
+</head>
+<body>
+
+    <div class="marquee-container">
+        <marquee behavior="scroll" direction="left" scrollamount="10" loop>
+            <a href="sale.html">🚀 FLASH SALE ALERT! 🚀 Get ready to score amazing deals on your favorite footwear styles! Limited-time offers on sneakers, sporty shoes, walking shoes, and fashion shoes for men, women, and kids. Don't miss out - shop now while stocks last!</a>
+        </marquee>
+    </div>
+    
+    
+    <header class="header">
+
+        <a href="index.html" class="logo"></i> SneakHub</a>
+
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="service.html">Services</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+        <div class="icons">
+            <div id="menu-btn" class="fas fa-bars" onclick="toggleMenu()"></div>
+            <a href="male.html" class="#"><i class='bx bx-male-sign'></i></i></a>
+            <a href="women.html" class="#"><i class='bx bx-female-sign' ></i></a>
+            <a href="kids.html" class="#"><i class='bx bx-child' ></i></a>
+            <a href="sport.html" class="#"><i class='bx bx-basketball' ></i></a>
+            <a href="trend.html" class="#"><i class='bx bx-trending-up'></i></a>
+        </div>
+    </header>
+
+    <section class="home">
+        <div class="home-content">
+            <h1>Welcome to SneakHub!</h1>
+            <h3>Shop Now!</h3>
+            <p>Step into a World of Style and Comfort: Welcome to SneakHub, 
+                Your Premier Destination for the Latest and Greatest in Footwear Fashion! Explore Our Vast Collection, 
+                Elevate Your Look, and Step Out in Confidence with Every Pair.</p>
+            <div class="btn-box">
+                <a href="blog.html">Shop now</a>
+            </div>
+    </section>
+    <section class="images">
+            <div class="home-image">
+                <div class="image">
+                    <div class="single-image">
+                        <a href="trend.html">
+                            <video width="100%" height="auto" autoplay muted loop style="border-radius: 10px;">
+                                <source src="VId/vid.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </a>                                                                     
+                    </div>
+                    <div class="single-image">
+                        <a href="women.html">
+                            <img src="Image Home/1.png" alt="Image 1">
+                        </a>
+                    </div>
+                    <div class="single-image">
+                        <a href="sport.html">
+                            <img src="Image Home/2.png" alt="Image 2">
+                        </a>
+                    </div>
+                    <div class="single-image">
+                        <a href="kids.html">
+                            <img src="Image Home/3.png" alt="Image 3">
+                        </a>
+                    </div>
+                    <div class="single-image">
+                        <a href="male.html">
+                            <img src="Image Home/4.png" alt="Image 4">
+                        </a>
+                    </div>
+                </div>
+                <button class="prev" onclick="prevSlide()">&#60;</button> <!-- This is for '<' symbol -->
+                <button class="next" onclick="nextSlide()">&#62;</button> <!-- This is for '>' symbol -->
+            </div>
+            
+            <script>
+                let index = 0;
+                const slides = document.querySelectorAll('.single-image');
+                const totalSlides = slides.length;
+                
+                function showSlide() {
+                    slides.forEach(slide => {
+                        slide.style.display = 'none';
+                    });
+                
+                    slides[index].style.display = 'block';
+                }
+                
+                function prevSlide() {
+                    index = (index - 1 + totalSlides) % totalSlides;
+                    showSlide();
+                }
+                
+                function nextSlide() {
+                    index = (index + 1) % totalSlides;
+                    showSlide();
+                }
+                
+                showSlide();
+            </script>
+        </div>
+    </section>
+    <section class="socials">
+        <div class="home-sci">
+            <a href="https://www.facebook.com/share/o5ikLeUPG2ng454uc/?mibextid=qi2Omg"><i class='bx bxl-facebook'></i></a>
+            <a href="https://twitter.com/SneakHub"><i class='bx bxl-twitter' ></i></a>
+            <a href="https://www.instagram.com/sneakhub_01?igsh=MWhvOHFwYXBqY3ZibQ=="><i class='bx bxl-instagram'></i></a>
+        </div>
+    </section>
+
+    <section class="review" id="review">
+        <h1 class="heading"><span>Team</span> Members</h1>
+        <div class="box-container">
+            <div class="box">
+                <div class="image">
+                    <img src="Members/me.png" alt="">
+                </div>
+                <div class="content">
+                    <div class="stars">
+                    </div>
+                    <h3>Viari, Mark Khean M.</h3>
+                    <p></p>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="image">
+                    <img src="Members/terr.png" alt="">
+                </div>
+                <div class="content">
+                    <div class="stars">
+                    </div>
+                    <h3>Lappay, Terrence</h3>
+                    <p></p>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="image">
+                    <img src="Members/lloyd.png" alt="">
+                </div>
+                <div class="content">
+                    <div class="stars">
+                    </div>
+                    <h3>Francisco, Christian Lloyd</h3>
+                    <p></p>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="image">
+                    <img src="Members/jerr.png" alt="">
+                </div>
+                <div class="content">
+                    <div class="stars">
+                    </div>
+                    <h3>Garcia, Jericho</h3>
+                    <p></p>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="image">
+                    <img src="Members/terr.png" alt="">
+                </div>
+                <div class="content">
+                    <div class="stars">
+                    </div>
+                    <h3>Guarin, Mark Renzo</h3>
+                    <p></p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="footer">
+
+        <div class="box-container"> 
+
+            <div class="box">
+                <h3>Services</h3>
+                <a href="service.html">Customization Services</a>
+                <a href="service.html">Size Recommendation</a>
+                <a href="service.html">Shoe Care and Maintenance</a>
+                <a href="service.html">Shoe Repair Services</a>
+            </div>
+
+            <div class="box">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="sale.html">Sale</a>
+                <a href="trend.html">Latest Shoes</a>
+            </div>
+
+            <div class="box">
+                <h3>Social Links</h3>
+                <a href="https://www.facebook.com/share/o5ikLeUPG2ng454uc/?mibextid=qi2Omg"> <i class="fab fa-facebook-f"></i> Facebook</a>
+                <a href="https://twitter.com/SneakHub"> <i class="fab fa-twitter"></i> Twitter</a>
+                <a href="https://www.instagram.com/sneakhub_01?igsh=MWhvOHFwYXBqY3ZibQ=="> <i class="fab fa-instagram"></i> Instagram</a>
+            </div>
+        </div>
+
+    </section>
+    <!-- swiper js cdn link -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- custom js file link  -->
+    <script src="women.js"></script>
+</body>
+</html>

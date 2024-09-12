@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SneakHub</title>
+    <link rel="stylesheet" href="CSS/style1.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <span class="bg-animate"></span>
+        <span class="bg-animate2"></span>
+
+        <div class="form-box login">
+            <h2 class="animation" style="--i:0; --j:21;">Login</h2>
+            <form action="admin.html" id="loginForm">
+                <div class="input-box animation" style="--i:1; --j:22;">
+                    <input type="text" required name="username">
+                    <label>Username</label>
+                    <i class='bx bxs-user'></i>
+                </div>
+                <div class="input-box animation" style="--i:2; --j:23;">
+                    <input type="password" required id="loginPasswordField" name="password">
+                    <label>Password</label>
+                    <i class='bx bxs-show' id="toggleLoginPassword"></i> <!-- Use bxs-show for the eye icon -->
+                </div>
+                <button type="submit" class="btn animation" style="--i:3; --j:24;">Login</button>
+                <div class="logreg-link animation" style="--i:4; --j:25;">
+                </div>
+            </form>
+        </div>
+        <div class="info-text login">
+            <h2 class="animation" style="--i:0; --j:20;">SneakHub</h2>
+            <p class="animation" style="--i:1; --j:21;">Elevate Your Style: SneakHub - Where Shoes Speak Louder</p>
+        </div>
+
+        <div class="form-box register">
+            <h2 class="animation" style="--i:17; --j:0;">Sign Up</h2>
+            <form action="#" id="signupForm">
+                <div class="input-box animation" style="--i:18; --j:1;">
+                    <input type="text" required maxlength="20" id="username">
+                    <label>Username</label>
+                    <i class='bx bxs-user'></i>
+                </div>
+                <div class="input-box animation" style="--i:19; --j:2;">
+                    <input type="email" required id="email">
+                    <label>Email</label>
+                    <i class='bx bx-envelope' ></i>
+                    <span id="emailError" class="error" style="display: none;">Please enter a valid email (@yahoo.com or @gmail.com)</span>
+                </div>
+                <div class="input-box animation" style="--i:20; --j:3;">
+                    <input type="password" required id="signupPasswordField">
+                    <label>Password</label>
+                    <i class='bx bxs-show' id="toggleSignupPassword"></i> <!-- Use bxs-show for the eye icon -->
+                </div>
+                <button type="submit" class="btn animation" style="--i:21; --j:4;">Sign Up</button>
+                <div class="logreg-link animation" style="--i:22; --j:5;">
+                    <p>Already have an account? <a href="#" class="login-link">Login</a></p>
+                </div>
+            </form>
+        </div>
+
+        <div class="info-text register">
+            <h2 class="animation" style="--i:17; --j:0;">SneakHub</h2>
+            <p class="animation" style="--i:18; --j:1;">Elevate Your Style: SneakHub - Where Shoes Speak Louder</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggleLoginPassword = document.getElementById('toggleLoginPassword');
+            const loginPasswordField = document.getElementById('loginPasswordField');
+            const toggleSignupPassword = document.getElementById('toggleSignupPassword');
+            const signupPasswordField = document.getElementById('signupPasswordField');
+            const signupEmailField = document.getElementById('email');
+            const emailError = document.getElementById('emailError');
+
+            toggleLoginPassword.addEventListener('click', function() {
+                const type = loginPasswordField.getAttribute('type') === 'password' ? 'text' : 'password';
+                loginPasswordField.setAttribute('type', type);
+
+                // Change icon accordingly
+                toggleLoginPassword.classList.toggle('bx-show');
+                toggleLoginPassword.classList.toggle('bxs-show');
+            });
+
+            toggleSignupPassword.addEventListener('click', function() {
+                const type = signupPasswordField.getAttribute('type') === 'password' ? 'text' : 'password';
+                signupPasswordField.setAttribute('type', type);
+
+                // Change icon accordingly
+                toggleSignupPassword.classList.toggle('bx-show');
+                toggleSignupPassword.classList.toggle('bxs-show');
+            });
+
+            // Validate email format
+            document.getElementById('signupForm').addEventListener('submit', function(event) {
+                const email = signupEmailField.value.trim();
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+                if (!emailRegex.test(email)) {
+                    emailError.textContent = 'Please enter a valid email (@yahoo.com or @gmail.com)';
+                    emailError.style.display = 'block';
+                    event.preventDefault(); // Prevent form submission
+                } else {
+                    emailError.style.display = 'none';
+                }
+            });
+
+            // Handle login form submission
+            document.getElementById('loginForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                var username = event.target.username.value;
+                var password = event.target.password.value;
+
+                // Replace these with your own values
+                var correctUsername = 'admin';
+                var correctPassword = 'password';
+
+                if (username === correctUsername && password === correctPassword) {
+                    // Redirect to the next page if the username and password are correct
+                    window.location.href = 'admin.html';
+                } else {
+                    // Show SweetAlert2 error message
+                    Swal.fire({
+                        icon: "error",
+                        title: "Oops...",
+                        text: "Wrong Username or Password!",
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
