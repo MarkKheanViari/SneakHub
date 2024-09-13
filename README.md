@@ -1,1 +1,1 @@
-# sneakhub.github.io
+# sneakhub
