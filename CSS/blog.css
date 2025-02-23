@@ -1,83 +1,123 @@
-body {
-  font-family: Arial, sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
+body {
+  background: #f8f8f8;
+  color: #333;
 }
 
+/* Modern Video Header */
 .video-header {
   position: relative;
+  width: 100%;
   height: 400px; /* Adjust height as needed */
   overflow: hidden;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .video-container {
   position: absolute;
-  top: -220px;
+  top: 0;
   left: 0;
   width: 100%;
-  box-shadow: 0 2rem 2rem rgba(0, 0, 0, 0.4);
   height: 100%;
 }
 
+.video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(70%);
+}
+
+/* Main Container */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 50px 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  justify-content: center;
+}
+
+/* Blog Sections */
 .blog-section {
-  background-color: #f9f9f9;
+  background: white;
   padding: 20px;
+  border-radius: 10px;
   text-align: center;
-  margin-bottom: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.blog-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 .blog-section h2 {
-  margin-top: 0;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  
+  font-size: 1.8rem;
+  color: orange;
+  margin-bottom: 15px;
 }
 
 .blog-section img {
-  margin-left: -17%;
-  max-width: 135%;
+  width: 100%;
   height: auto;
-  box-shadow: 0 2rem 2rem rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  transition: transform 0.3s ease;
 }
 
 .blog-section img:hover {
-  transform: scale(1.05); /* Adjust the scale factor as needed */
+  transform: scale(1.08);
 }
 
-.blog-section p {
-  margin-bottom: 0;
-}
-
+/* Back Button */
 .back-button {
   position: fixed;
   top: 20px;
   left: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 50px;
   height: 50px;
   background-color: orange;
-  color: #fff;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 50%;
   text-decoration: none;
-  z-index: 999; /* Ensure it's above other content */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .back-button:hover {
   background-color: white;
   color: orange;
+  transform: scale(1.1);
 }
 
-.back-button::before {
-  content: "<";
-  font-size: 20px;
-}
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
 
+  .video-header {
+    height: 300px;
+  }
+
+  .blog-section h2 {
+    font-size: 1.5rem;
+  }
+}

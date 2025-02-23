@@ -1,184 +1,176 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;600&display=swap');
 
-*{
-  margin: 0px;
-  padding: 0px;
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
-.additional-content {
-  display: none; /* Hide the additional content by default */
-  margin-top: 20px; /* Add some space between the main content and additional content */
-  font-size: 14px; /* Adjust the font size */
-  line-height: 1.6; /* Adjust the line height */
-  color: #333; /* Set the text color */
-
+/* Page Background */
+body {
+  background: #FAF8F6; /* Soft off-white background */
+  color: #333;
 }
 
+/* Main Section */
 .section {
   width: 100%;
   min-height: 100vh;
-  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 10%;
 }
 
+/* Container */
 .container {
-  width: 80%;
-  display: block;
-  margin: auto;
-  padding-top: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1100px;
+  width: 100%;
+  background: #fff;
+  padding: 3rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
+/* Left Content Section */
 .content-section {
-  float: left;
-  width: 55%;
+  flex: 1;
+  padding-right: 3rem;
 }
 
-.image-section {
-    float: right;
-    width: 44%;
-    display: flex;
-    justify-content: center; /* Center the image horizontally */
-    align-items: center; /* Center the image vertically */
-  }
-  
-  .image-section img {
-    width: 80%; /* Adjust the width as needed */
-    max-width: 450px; /* Limit the maximum width */
-    height: auto;
-    border: 5px solid orange; /* Add the orange border */
-    display: block;
-    margin: auto;
-  }
-  
-
-.image-section img:hover {
-background-size: cover;
-box-shadow: 0 0 50px #FF914D;
+.content-section .title {
+  font-size: 2.8rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  color: #2C2C2C;
 }
 
-.content-section .title{
-  text-transform: uppercase;
-  font-size: 28px;
-  color: orange;
-  font-weight: 45px;
+.content-section .content h3 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #555;
+  margin-top: 1rem;
 }
 
-.content-section .content h3{
-  margin-top: 20px;
-  color: #5d5d5d;
-  font-size: 21px;
+.content-section .content p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.8;
+  margin-top: 1rem;
 }
 
-.content-section .content p{
-  margin-top: 10px;
-  font-family: sans-serif;
-  font-size: 18px;
-  line-height: 1.5;
-}
-.content-section .content .button{
-  margin-top: 30px;
+/* Read More Section */
+.additional-content {
+  display: none;
+  font-size: 1rem;
+  color: #444;
+  margin-top: 1rem;
+  line-height: 1.8;
 }
 
-.content-section .content .button a{
-  background-color: #3d3d3d;
-  padding: 12px 40px;
+/* Button */
+.content-section .content .button {
+  margin-top: 1.5rem;
+}
+
+.content-section .content .button a {
+  display: inline-block;
+  background: #2C2C2C;
+  padding: 12px 30px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: white;
+  border-radius: 50px;
   text-decoration: none;
-  color: #fff;
-  font-size: 25px;
-  letter-spacing: 1.5px;
-  box-shadow: 0 1.5rem 1.5rem rgba(0, 0, 0, 0.2);
-  cursor: pointer;
+  transition: 0.3s ease-in-out;
 }
 
 .content-section .content .button a:hover {
-  background-color: orange;
-  color: black;
+  background: #FF914D;
+  color: white;
 }
 
+/* Social Icons */
 .content-section .social {
-  margin: 30px 30px;
-}
-.content-section .social i{
-  color: orange;
-  font-size: 30px;
-  padding: 0px 10px;
+  margin-top: 2rem;
 }
 
-.content-section .social i:hover {
-  color: black;
+.content-section .social a {
+  font-size: 1.6rem;
+  margin-right: 15px;
+  color: #888;
+  transition: 0.3s ease-in-out;
 }
 
+.content-section .social a:hover {
+  color: #FF914D;
+}
+
+/* Right Image Section */
+.image-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-section img {
+  max-width: 100%;
+  width: 380px;
+  border-radius: 10px;
+  opacity: 0.9;
+  transition: 0.3s ease-in-out;
+}
+
+.image-section img:hover {
+  opacity: 1;
+  box-shadow: 0 0 40px rgba(255, 145, 77, 0.3);
+}
+
+/* Back Button */
 .back-button {
   position: fixed;
   top: 20px;
   left: 20px;
+  width: 45px;
+  height: 45px;
+  background: #2C2C2C;
+  color: white;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 50px;
-  height: 50px;
-  background-color: #3d3d3d;
-  color: #fff;
-  border-radius: 50%;
+  font-size: 1.4rem;
   text-decoration: none;
-  z-index: 999; /* Ensure it's above other content */
+  transition: 0.3s ease-in-out;
 }
 
 .back-button:hover {
-  background-color: orange;
+  background: #FF914D;
   color: white;
 }
 
-.back-button::before {
-  content: "<";
-  font-size: 20px;
-}
-
-
-@media screen and (max-width: 768px) {
+/* Responsive */
+@media (max-width: 992px) {
   .container {
-    width: 80%;
-    display: block;
-    margin: auto;
-    padding-top: 50px;
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
   }
 
   .content-section {
-    float: none;
-    width: 100%;
-    display: block;
-    margin: auto;
+    padding-right: 0;
   }
 
   .image-section {
-    float: none;
-    width: 100%;
-    display: block;
-    margin: auto;
+    margin-top: 2rem;
   }
 
   .image-section img {
-    width: 100%;
-    height: auto;
-    display: block;
-    margin: auto;
-  }
-
-  .content-section .title {
-    text-align: center;
-    font-size: 19px;
-  }
-
-  .content-section .content .button {
-    text-align: center;
-  }
-
-  .content-section .content .button a {
-    padding: 9px 30px;
-  }
-
-  .content-section .social {
-    text-align: center;
+    width: 280px;
   }
 }

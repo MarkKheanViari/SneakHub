@@ -1,127 +1,147 @@
-*{
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;600&display=swap');
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
 }
+
+/* Prevent Scrolling */
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Hide scrolling */
+    background: #FAF8F6;
+    color: #333;
+}
+
+/* Full-Screen Centering */
 .service {
-    font-family: 'poppins', sans-serif;
+    height: 100vh; /* Full screen height */
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    background: #ffffff;
-    padding: 20px; /* Added padding */
+    text-align: center;
+    padding: 1rem;
 }
 
-.service h1{
-    font-size: 3em;
-    margin: 25px;
+/* Title */
+.service h1 {
+    font-size: 2.5rem;
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    color: #2C2C2C;
+    margin-bottom: 0.5rem;
 }
 
+.service p {
+    font-size: 1.1rem;
+    color: #555;
+    max-width: 700px;
+}
+
+/* Service Boxes - Adjusted for Full-Screen Fit */
 .service1 {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* Centering the items */
-    max-width: 1200px; /* Adjusted maximum width */
-}
-
-.service2 {
-    min-height: 220px;
-    width: 45%; /* Adjusted width to fit two columns */
-    padding: 30px;
-    border-radius: 5px;
-    display: flex;
     justify-content: center;
     align-items: center;
+    gap: 1.5rem;
+    max-width: 900px;
+    margin-top: 1rem;
+}
+
+/* Individual Service Box */
+.service2 {
+    background: white;
+    width: 200px;
+    height: 220px;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: 0.3s ease-in-out;
+    display: flex;
     flex-direction: column;
-    background: #ffffff;
-    margin: 10px;
-    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2);
+    justify-content: center;
+    align-items: center;
 }
 
+/* Hover Effect */
+.service2:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Icons */
 .service2 i {
-    margin: 20px;
+    font-size: 2rem;
     color: #fc7425;
-    font-size: 2em; /* Adjust the font size to make the icons bigger */
+    margin-bottom: 0.5rem;
+    transition: 0.3s ease;
 }
 
-.service2 i{
-    margin: 20px;
-    color: #fc7425;
+.service2:hover i {
+    color: #2C2C2C;
 }
-.service2 h2{
-    margin-bottom: 12px;
-    font-weight: 400;
-    text-align: center;
-}
-.service2 p{
-    color: #756e65;
-    text-align: center;
-}
-.service2:hover i,
-.service2:hover p{
-    color: #fff;
-}
-.service2:hover h2{
+
+/* Title */
+.service2 h2 {
+    font-size: 1.1rem;
     font-weight: 600;
-}
-.service2:nth-child(1):hover,
-.service2:nth-child(2):hover,
-.service2:nth-child(3):hover,
-.service2:nth-child(4):hover {
-    background: orange;
-    background-size: cover;
-    box-shadow: 0 0 100px orange;
+    color: #333;
+    margin-bottom: 0.5rem;
 }
 
+/* Description */
+.service2 p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.4;
+}
+
+/* Back Button */
 .back-button {
     position: fixed;
     top: 20px;
     left: 20px;
+    width: 45px;
+    height: 45px;
+    background: #2C2C2C;
+    color: white;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 70px;
-    height: 70px;
-    background-color: white;
-    box-shadow: 0 2rem 3rem rgba(0, 0, 0, 0.4);
-    color: orange;
-    border-radius: 50%;
+    font-size: 1.2rem;
     text-decoration: none;
-    z-index: 999; /* Ensure it's above other content */
-  }
-  
-  .back-button:hover {
-    background-color: orange;
-    color: white;
-  }
-  
-  .back-button::before {
-    content: "<";
-    font-size: 20px;
-    font-weight: bold;
-  }
-
-@media(max-width:991px){
-    .service{
-        padding: 25px;
-    }
-    .service h1{
-        font-size: 2.5em;
-        font-weight: 600;
-    }
-    .service1{
-        flex-direction: column;
-        width: 100%;
-    }
-    .service2{
-        min-width: 300px;
-        margin: 10px auto;
-    }
+    transition: 0.3s ease-in-out;
 }
 
-@media(max-width: 425px){
-    .service h1, .service p{
-        text-align: center;
+.back-button:hover {
+    background: #FF914D;
+    color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .service {
+        padding: 1rem;
+    }
+
+    .service h1 {
+        font-size: 2rem;
+    }
+
+    .service1 {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .service2 {
+        width: 90%;
+        max-width: 280px;
+        height: 180px;
     }
 }

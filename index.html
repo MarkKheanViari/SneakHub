@@ -26,33 +26,49 @@
 </head>
 <body>
 
-    <div class="marquee-container">
-        <marquee behavior="scroll" direction="left" scrollamount="10" loop>
-            <a href="sale.html">🚀 FLASH SALE ALERT! 🚀 Get ready to score amazing deals on your favorite footwear styles! Limited-time offers on sneakers, sporty shoes, walking shoes, and fashion shoes for men, women, and kids. Don't miss out - shop now while stocks last!</a>
-        </marquee>
+    <!-- Modern News Flash -->
+<div class="news-ticker">
+    <div class="news-content">
+        <a href="sale.html">🚀 FLASH SALE ALERT! 🚀 Get ready to score amazing deals on your favorite footwear styles! Limited-time offers on sneakers, sporty shoes, walking shoes, and fashion shoes for men, women, and kids. Don't miss out - shop now while stocks last! 🎉🔥</a>
     </div>
-    
-    
+</div>
+
     <header class="header">
-
-        <a href="index.html" class="logo"></i> SneakHub</a>
-
+        <a href="index.html" class="logo"><i class='bx bxs-shoe'></i> SneakHub</a>
+    
         <nav class="navbar">
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
             <a href="service.html">Services</a>
             <a href="contact.html">Contact</a>
         </nav>
-
+    
         <div class="icons">
-            <div id="menu-btn" class="fas fa-bars" onclick="toggleMenu()"></div>
-            <a href="male.html" class="#"><i class='bx bx-male-sign'></i></i></a>
-            <a href="women.html" class="#"><i class='bx bx-female-sign' ></i></a>
-            <a href="kids.html" class="#"><i class='bx bx-child' ></i></a>
-            <a href="sport.html" class="#"><i class='bx bx-basketball' ></i></a>
-            <a href="trend.html" class="#"><i class='bx bx-trending-up'></i></a>
+            <div id="menu-btn" class="fas fa-bars"></div>
+            <a href="male.html"><i class='bx bx-male-sign'></i></a>
+            <a href="women.html"><i class='bx bx-female-sign'></i></a>
+            <a href="kids.html"><i class='bx bx-child'></i></a>
+            <a href="sport.html"><i class='bx bx-basketball'></i></a>
+            <a href="trend.html"><i class='bx bx-trending-up'></i></a>
         </div>
     </header>
+    
+    <script>
+        // Toggle Mobile Menu
+        document.getElementById("menu-btn").addEventListener("click", function() {
+            document.querySelector(".navbar").classList.toggle("active");
+        });
+
+        window.addEventListener("scroll", function() {
+        let header = document.querySelector(".header");
+        let marquee = document.querySelector(".news-ticker");
+        if (window.scrollY > 50) { // If user scrolls down 50px
+            document.body.classList.add("scrolled"); // Add scrolled class
+        } else {
+            document.body.classList.remove("scrolled"); // Remove class when at top
+        }
+    });
+    </script>
 
     <section class="home">
         <div class="home-content">
@@ -65,6 +81,7 @@
                 <a href="blog.html">Shop now</a>
             </div>
     </section>
+
     <section class="images">
             <div class="home-image">
                 <div class="image">
@@ -136,76 +153,89 @@
         </div>
     </section>
 
-    <section class="review" id="review">
-        <h1 class="heading"><span>Team</span> Members</h1>
-        <div class="box-container">
-            <div class="box">
-                <div class="image">
-                    <img src="Members/me.png" alt="">
-                </div>
-                <div class="content">
-                    <div class="stars">
-                    </div>
-                    <h3>Viari, Mark Khean M.</h3>
-                    <p></p>
+    <section class="team-members" id="team">
+    <h1 class="heading"><span>Meet Our</span> Team</h1>
+    <div class="box-container">
+        <div class="box">
+            <div class="image">
+                <img src="Members/me.png" alt="Mark Khean">
+            </div>
+            <div class="content">
+                <h3>Viari, Mark Khean </h3>
+                <p>Project Manager</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
-
-            <div class="box">
-                <div class="image">
-                    <img src="Members/terr.png" alt="">
-                </div>
-                <div class="content">
-                    <div class="stars">
-                    </div>
-                    <h3>Lappay, Terrence</h3>
-                    <p></p>
-                </div>
-            </div>
-
-            <div class="box">
-                <div class="image">
-                    <img src="Members/lloyd.png" alt="">
-                </div>
-                <div class="content">
-                    <div class="stars">
-                    </div>
-                    <h3>Francisco, Christian Lloyd</h3>
-                    <p></p>
-                </div>
-            </div>
-
-            <div class="box">
-                <div class="image">
-                    <img src="Members/jerr.png" alt="">
-                </div>
-                <div class="content">
-                    <div class="stars">
-                    </div>
-                    <h3>Garcia, Jericho</h3>
-                    <p></p>
-                </div>
-            </div>
-
-            <div class="box">
-                <div class="image">
-                    <img src="Members/terr.png" alt="">
-                </div>
-                <div class="content">
-                    <div class="stars">
-                    </div>
-                    <h3>Guarin, Mark Renzo</h3>
-                    <p></p>
-                </div>
-            </div>
-
         </div>
-    </section>
 
-    <section class="footer">
+        <div class="box">
+            <div class="image">
+                <img src="Members/terr.png" alt="Terrence">
+            </div>
+            <div class="content">
+                <h3>Lappay, Terrence</h3>
+                <p>Customization Specialist</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
 
-        <div class="box-container"> 
+        <div class="box">
+            <div class="image">
+                <img src="Members/lloyd.png" alt="Christian Lloyd">
+            </div>
+            <div class="content">
+                <h3>Francisco, Christian Lloyd</h3>
+                <p>Sneaker Maintenance Specialist</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
 
+        <div class="box">
+            <div class="image">
+                <img src="Members/jerr.png" alt="Jericho">
+            </div>
+            <div class="content">
+                <h3>Garcia, Jericho</h3>
+                <p>Trend Research & Marketing</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="image">
+                <img src="Members/terr.png" alt="Mark Renzo">
+            </div>
+            <div class="content">
+                <h3>Guarin, Mark Renzo</h3>
+                <p>Customer Service Lead</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <footer class="footer">
+        <div class="box-container">
             <div class="box">
                 <h3>Services</h3>
                 <a href="service.html">Customization Services</a>
@@ -213,7 +243,7 @@
                 <a href="service.html">Shoe Care and Maintenance</a>
                 <a href="service.html">Shoe Repair Services</a>
             </div>
-
+    
             <div class="box">
                 <h3>Quick Links</h3>
                 <a href="index.html">Home</a>
@@ -222,16 +252,19 @@
                 <a href="sale.html">Sale</a>
                 <a href="trend.html">Latest Shoes</a>
             </div>
-
+    
             <div class="box">
-                <h3>Social Links</h3>
-                <a href="https://www.facebook.com/share/o5ikLeUPG2ng454uc/?mibextid=qi2Omg"> <i class="fab fa-facebook-f"></i> Facebook</a>
-                <a href="https://twitter.com/SneakHub"> <i class="fab fa-twitter"></i> Twitter</a>
-                <a href="https://www.instagram.com/sneakhub_01?igsh=MWhvOHFwYXBqY3ZibQ=="> <i class="fab fa-instagram"></i> Instagram</a>
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/share/o5ikLeUPG2ng454uc/?mibextid=qi2Omg"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/SneakHub"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/sneakhub_01?igsh=MWhvOHFwYXBqY3ZibQ=="><i class="fab fa-instagram"></i></a>
+                </div>
             </div>
         </div>
 
-    </section>
+    </footer>
+    
     <!-- swiper js cdn link -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
