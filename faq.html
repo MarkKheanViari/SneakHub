@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - SneakHub</title>
+    <meta name="description" content="Find answers to frequently asked questions about SneakHub's products, services, shipping, returns, and more.">
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Boxicons -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-shoe-prints me-2"></i>SneakHub
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Products
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="male.html">Men's Shoes</a></li>
+                            <li><a class="dropdown-item" href="women.html">Women's Shoes</a></li>
+                            <li><a class="dropdown-item" href="kids.html">Kids' Shoes</a></li>
+                            <li><a class="dropdown-item" href="sport.html">Sports Shoes</a></li>
+                            <li><a class="dropdown-item" href="trend.html">Trending</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="team.html">Team</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="service.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                
+                <!-- Search Bar -->
+                <div class="d-flex align-items-center me-3">
+                    <div class="position-relative">
+                        <input type="text" class="form-control" placeholder="Search products..." id="search-input">
+                        <div id="search-results" class="position-absolute bg-white border rounded shadow-lg" style="top: 100%; left: 0; right: 0; z-index: 1000; display: none; max-height: 300px; overflow-y: auto;"></div>
+                    </div>
+                </div>
+                
+                <!-- Cart -->
+                <div class="d-flex align-items-center">
+                    <button class="btn btn-outline-light position-relative" id="cart-modal-trigger">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-badge" id="cart-count" style="display: none;">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header bg-gradient-custom text-white py-5" style="margin-top: 76px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="display-4 fw-bold mb-3">Frequently Asked Questions</h1>
+                    <p class="lead">Find answers to common questions about our products, services, and policies</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Content -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <!-- General Questions -->
+                    <div class="mb-5">
+                        <h2 class="h3 text-primary-custom mb-4">
+                            <i class="fas fa-question-circle me-2"></i>General Questions
+                        </h2>
+                        <div class="accordion" id="generalAccordion">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#general1">
+                                        What is SneakHub?
+                                    </button>
+                                </h2>
+                                <div id="general1" class="accordion-collapse collapse show" data-bs-parent="#generalAccordion">
+                                    <div class="accordion-body">
+                                        SneakHub is your premier destination for premium sneakers and customization services. We offer a curated collection of men's, women's, and kids' shoes from top brands, along with professional customization services to make your sneakers truly unique.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#general2">
+                                        Do you offer international shipping?
+                                    </button>
+                                </h2>
+                                <div id="general2" class="accordion-collapse collapse" data-bs-parent="#generalAccordion">
+                                    <div class="accordion-body">
+                                        Yes! We ship to over 50 countries worldwide. International shipping rates and delivery times vary by location. Please check our <a href="shipping.html">shipping page</a> for detailed information about rates and estimated delivery times for your country.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#general3">
+                                        How can I track my order?
+                                    </button>
+                                </h2>
+                                <div id="general3" class="accordion-collapse collapse" data-bs-parent="#generalAccordion">
+                                    <div class="accordion-body">
+                                        Once your order ships, you'll receive a tracking number via email. You can track your package using our tracking system or directly through the carrier's website. You can also check your order status by logging into your account.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Products -->
+                    <div class="mb-5">
+                        <h2 class="h3 text-primary-custom mb-4">
+                            <i class="fas fa-shoe-prints me-2"></i>Products
+                        </h2>
+                        <div class="accordion" id="productsAccordion">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#products1">
+                                        Are your products authentic?
+                                    </button>
+                                </h2>
+                                <div id="products1" class="accordion-collapse collapse show" data-bs-parent="#productsAccordion">
+                                    <div class="accordion-body">
+                                        Absolutely! All our products are 100% authentic and sourced directly from authorized retailers and brand partners. We guarantee the authenticity of every item we sell and provide certificates of authenticity when requested.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#products2">
+                                        What brands do you carry?
+                                    </button>
+                                </h2>
+                                <div id="products2" class="accordion-collapse collapse" data-bs-parent="#productsAccordion">
+                                    <div class="accordion-body">
+                                        We carry all major sneaker brands including Nike, Adidas, Jordan, Converse, Puma, New Balance, Vans, and many more. Our collection is constantly updated with the latest releases and classic styles.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#products3">
+                                        Do you have a size guide?
+                                    </button>
+                                </h2>
+                                <div id="products3" class="accordion-collapse collapse" data-bs-parent="#productsAccordion">
+                                    <div class="accordion-body">
+                                        Yes! We have a comprehensive <a href="size-guide.html">size guide</a> that includes conversion charts for men's, women's, and kids' shoes. We also provide detailed sizing information for each product to help you find the perfect fit.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#products4">
+                                        What if a product is out of stock?
+                                    </button>
+                                </h2>
+                                <div id="products4" class="accordion-collapse collapse" data-bs-parent="#productsAccordion">
+                                    <div class="accordion-body">
+                                        If a product is out of stock, you can join our waitlist to be notified when it becomes available again. We also recommend checking similar styles or contacting our customer service team for alternative suggestions.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Orders & Shipping -->
+                    <div class="mb-5">
+                        <h2 class="h3 text-primary-custom mb-4">
+                            <i class="fas fa-shipping-fast me-2"></i>Orders & Shipping
+                        </h2>
+                        <div class="accordion" id="shippingAccordion">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#shipping1">
+                                        How long does shipping take?
+                                    </button>
+                                </h2>
+                                <div id="shipping1" class="accordion-collapse collapse show" data-bs-parent="#shippingAccordion">
+                                    <div class="accordion-body">
+                                        <strong>Standard Shipping:</strong> 3-5 business days<br>
+                                        <strong>Express Shipping:</strong> 1-2 business days<br>
+                                        <strong>International:</strong> 7-14 business days<br><br>
+                                        Processing time is 1-2 business days before shipment. For more details, visit our <a href="shipping.html">shipping information page</a>.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#shipping2">
+                                        What are your shipping rates?
+                                    </button>
+                                </h2>
+                                <div id="shipping2" class="accordion-collapse collapse" data-bs-parent="#shippingAccordion">
+                                    <div class="accordion-body">
+                                        <strong>Free shipping</strong> on orders over $100<br>
+                                        <strong>Standard shipping:</strong> $9.99<br>
+                                        <strong>Express shipping:</strong> $19.99<br>
+                                        <strong>International shipping:</strong> Starting at $24.99<br><br>
+                                        All prices are in USD. International rates vary by destination.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#shipping3">
+                                        Can I change or cancel my order?
+                                    </button>
+                                </h2>
+                                <div id="shipping3" class="accordion-collapse collapse" data-bs-parent="#shippingAccordion">
+                                    <div class="accordion-body">
+                                        You can modify or cancel your order within 1 hour of placing it, as long as it hasn't been processed for shipping. After that, you'll need to follow our return process. Contact our customer service team immediately if you need to make changes.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Returns & Exchanges -->
+                    <div class="mb-5">
+                        <h2 class="h3 text-primary-custom mb-4">
+                            <i class="fas fa-undo me-2"></i>Returns & Exchanges
+                        </h2>
+                        <div class="accordion" id="returnsAccordion">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#returns1">
+                                        What is your return policy?
+                                    </button>
+                                </h2>
+                                <div id="returns1" class="accordion-collapse collapse show" data-bs-parent="#returnsAccordion">
+                                    <div class="accordion-body">
+                                        We offer a 30-day return policy for unworn items in original condition with tags attached. Items must be in resellable condition. Customized items are not eligible for returns unless there's a defect. For full details, see our <a href="returns.html">returns policy</a>.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#returns2">
+                                        How do I return an item?
+                                    </button>
+                                </h2>
+                                <div id="returns2" class="accordion-collapse collapse" data-bs-parent="#returnsAccordion">
+                                    <div class="accordion-body">
+                                        <ol>
+                                            <li>Log into your account and go to "My Orders"</li>
+                                            <li>Select the item you want to return</li>
+                                            <li>Print the return label</li>
+                                            <li>Package the item securely</li>
+                                            <li>Drop off at any authorized carrier location</li>
+                                        </ol>
+                                        We'll process your refund within 5-7 business days after receiving the item.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#returns3">
+                                        Do you offer exchanges?
+                                    </button>
+                                </h2>
+                                <div id="returns3" class="accordion-collapse collapse" data-bs-parent="#returnsAccordion">
+                                    <div class="accordion-body">
+                                        Yes! We offer size exchanges for the same item. If you need a different size, simply return the original item and place a new order for the correct size. We'll process the refund for the returned item once we receive it.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Customization Services -->
+                    <div class="mb-5">
+                        <h2 class="h3 text-primary-custom mb-4">
+                            <i class="fas fa-paint-brush me-2"></i>Customization Services
+                        </h2>
+                        <div class="accordion" id="customAccordion">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#custom1">
+                                        What customization services do you offer?
+                                    </button>
+                                </h2>
+                                <div id="custom1" class="accordion-collapse collapse show" data-bs-parent="#customAccordion">
+                                    <div class="accordion-body">
+                                        We offer a wide range of customization services including:
+                                        <ul>
+                                            <li>Custom color schemes and designs</li>
+                                            <li>Personalized text and graphics</li>
+                                            <li>Logo and branding applications</li>
+                                            <li>Material modifications</li>
+                                            <li>Restoration and cleaning services</li>
+                                        </ul>
+                                        Visit our <a href="service.html">services page</a> for more information.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#custom2">
+                                        How long does customization take?
+                                    </button>
+                                </h2>
+                                <div id="custom2" class="accordion-collapse collapse" data-bs-parent="#customAccordion">
+                                    <div class="accordion-body">
+                                        Customization time varies depending on the complexity of the work:
+                                        <ul>
+                                            <li><strong>Simple designs:</strong> 3-5 business days</li>
+                                            <li><strong>Complex designs:</strong> 7-10 business days</li>
+                                            <li><strong>Restoration work:</strong> 10-14 business days</li>
+                                        </ul>
+                                        We'll provide an estimated completion date when you place your customization order.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#custom3">
+                                        Can I customize any shoe?
+                                    </button>
+                                </h2>
+                                <div id="custom3" class="accordion-collapse collapse" data-bs-parent="#customAccordion">
+                                    <div class="accordion-body">
+                                        Most shoes can be customized, but some materials and designs work better than others. We'll assess your shoes and provide recommendations. Some limitations may apply to certain materials or brand restrictions. Contact us for a consultation.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Payment & Security -->
+                    <div class="mb-5">
+                        <h2 class="h3 text-primary-custom mb-4">
+                            <i class="fas fa-credit-card me-2"></i>Payment & Security
+                        </h2>
+                        <div class="accordion" id="paymentAccordion">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#payment1">
+                                        What payment methods do you accept?
+                                    </button>
+                                </h2>
+                                <div id="payment1" class="accordion-collapse collapse show" data-bs-parent="#paymentAccordion">
+                                    <div class="accordion-body">
+                                        We accept all major payment methods:
+                                        <ul>
+                                            <li>Credit cards (Visa, MasterCard, American Express, Discover)</li>
+                                            <li>Debit cards</li>
+                                            <li>PayPal</li>
+                                            <li>Apple Pay</li>
+                                            <li>Google Pay</li>
+                                            <li>Shop Pay</li>
+                                        </ul>
+                                        All payments are processed securely through encrypted connections.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#payment2">
+                                        Is my payment information secure?
+                                    </button>
+                                </h2>
+                                <div id="payment2" class="accordion-collapse collapse" data-bs-parent="#paymentAccordion">
+                                    <div class="accordion-body">
+                                        Yes! We use industry-standard SSL encryption and never store your complete payment information. All transactions are processed through secure, PCI-compliant payment processors. Your financial data is protected with bank-level security.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#payment3">
+                                        Do you offer payment plans?
+                                    </button>
+                                </h2>
+                                <div id="payment3" class="accordion-collapse collapse" data-bs-parent="#paymentAccordion">
+                                    <div class="accordion-body">
+                                        Yes! We offer flexible payment options through Shop Pay, which allows you to split your purchase into 4 interest-free payments. This option is available for orders over $50. You can also use Afterpay or Klarna for additional payment flexibility.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h3 class="mb-3">Still have questions?</h3>
+                    <p class="lead mb-4">Our customer service team is here to help! Get in touch with us for personalized assistance.</p>
+                    <div class="d-flex gap-3 justify-content-center flex-wrap">
+                        <a href="contact.html" class="btn btn-primary btn-lg">Contact Us</a>
+                        <a href="tel:+1-555-SNEAKER" class="btn btn-outline-primary btn-lg">
+                            <i class="fas fa-phone me-2"></i>Call Us
+                        </a>
+                        <a href="mailto:support@sneakhub.com" class="btn btn-outline-primary btn-lg">
+                            <i class="fas fa-envelope me-2"></i>Email Us
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5><i class="fas fa-shoe-prints me-2"></i>SneakHub</h5>
+                    <p class="text-muted">Your premier destination for premium sneakers and customization services. Quality, style, and comfort in every step.</p>
+                    <div class="social-links">
+                        <a href="https://facebook.com/sneakhub"><i class="fab fa-facebook"></i></a>
+                        <a href="https://twitter.com/sneakhub"><i class="fab fa-twitter"></i></a>
+                        <a href="https://instagram.com/sneakhub"><i class="fab fa-instagram"></i></a>
+                        <a href="https://youtube.com/sneakhub"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Products</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="male.html">Men's Shoes</a></li>
+                        <li><a href="women.html">Women's Shoes</a></li>
+                        <li><a href="kids.html">Kids' Shoes</a></li>
+                        <li><a href="sport.html">Sports Shoes</a></li>
+                        <li><a href="trend.html">Trending</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Services</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="service.html">Customization</a></li>
+                        <li><a href="size-guide.html">Size Guide</a></li>
+                        <li><a href="service.html">Shoe Care</a></li>
+                        <li><a href="service.html">Repairs</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Company</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="team.html">Our Team</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="sale.html">Sale</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Support</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="shipping.html">Shipping</a></li>
+                        <li><a href="returns.html">Returns</a></li>
+                        <li><a href="size-guide.html">Size Guide</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <hr class="my-4">
+            
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0 text-muted">&copy; 2025 SneakHub. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="privacy.html" class="text-muted me-3">Privacy Policy</a>
+                    <a href="terms.html" class="text-muted">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div class="modal fade" id="cartModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">
+                        <i class="fas fa-shopping-cart me-2"></i>Shopping Cart
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="cart-items">
+                        <!-- Cart items will be populated here -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="d-flex justify-content-between w-100">
+                        <div>
+                            <div class="d-flex justify-content-between">
+                                <span>Subtotal:</span>
+                                <span id="cart-subtotal">$0.00</span>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <span>Tax:</span>
+                                <span id="cart-tax">$0.00</span>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <span>Shipping:</span>
+                                <span id="cart-shipping">$0.00</span>
+                            </div>
+                            <hr>
+                            <div class="d-flex justify-content-between fw-bold">
+                                <span>Total:</span>
+                                <span id="cart-total" class="text-primary-custom">$0.00</span>
+                            </div>
+                        </div>
+                        <div class="d-flex gap-2">
+                            <button class="btn btn-outline-secondary" onclick="clearCart()">Clear Cart</button>
+                            <button class="btn btn-primary" onclick="proceedToCheckout()">Checkout</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <!-- Custom JS -->
+    <script src="js/app.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/forms.js"></script>
+    <script src="js/cart.js"></script>
+</body>
+</html>
+

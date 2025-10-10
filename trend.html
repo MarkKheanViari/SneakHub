@@ -3,768 +3,533 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Latest Shoes</title>
-    <!-- font awesome cdn link  -->
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <!-- font awesome cdn link  -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <!-- swiper js cdn -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-    <!-- custom css file link  -->
-    <link rel="stylesheet" href="CSS/male.css">
+    <title>Trending - SneakHub</title>
+    <meta name="description" content="Discover the latest and most popular sneakers. Stay ahead of the trends with our curated collection of trending footwear.">
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Boxicons -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
-    <header class="header">
-
-        <a href="#" class="logo"></i> Latest Shoes</a>
-
-        <nav class="navbar">
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="service.html">Services</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-
-        <div class="icons">
-            <div id="menu-btn" class="fas fa-bars" onclick="toggleMenu()"></div>
-            <a href="male.html" class="#"><i class='bx bx-male-sign'></i></i></a>
-            <a href="women.html" class="#"><i class='bx bx-female-sign' ></i></a>
-            <a href="kids.html" class="#"><i class='bx bx-child' ></i></a>
-            <a href="sport.html" class="#"><i class='bx bx-basketball' ></i></a>
-            <a href="trend.html" class="#"><i class='bx bx-trending-up'></i></a>
-        </div>
-    </header>
-
-    <!-- header section ends -->
-
-    <!-- home section starts -->
-
-    <section class="home" id="home">
-
-        <div class="slides-container">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-shoe-prints me-2"></i>SneakHub
+            </a>
             
-            <div class="slide active">
-                <div class="content">
-                    <span></span>
-                    <h3>Trending</h3>
-                    <p>Nike's "Lost and Found" Jordan 1s are part of a reimagined series that tells the story of how sneakers were often lost in storage before being discovered again. The "Lost and Found" Chicago, also known as the 2022 "Lost and Found", is a sneaker that pays homage to the original 1985 Air Jordan 1. The shoe's design is inspired by what an original 1985 Air Jordan 1 would look like if found decades later in a dusty stock room. </p>
-                    <button class="btn">
-                        <span>shop now</span>
-                        <i class="fas fa-arrow-right"></i>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown">
+                            Products
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="male.html">Men's Shoes</a></li>
+                            <li><a class="dropdown-item" href="women.html">Women's Shoes</a></li>
+                            <li><a class="dropdown-item" href="kids.html">Kids' Shoes</a></li>
+                            <li><a class="dropdown-item" href="sport.html">Sports Shoes</a></li>
+                            <li><a class="dropdown-item active" href="trend.html">Trending</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="service.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                
+                <!-- Search Bar -->
+                <div class="d-flex align-items-center me-3">
+                    <div class="position-relative">
+                        <input type="text" class="form-control" placeholder="Search products..." id="search-input">
+                        <div id="search-results" class="position-absolute bg-white border rounded shadow-lg" style="top: 100%; left: 0; right: 0; z-index: 1000; display: none; max-height: 300px; overflow-y: auto;"></div>
+                    </div>
+                </div>
+                
+                <!-- Cart -->
+                <div class="d-flex align-items-center">
+                    <button class="btn btn-outline-light position-relative" id="cart-modal-trigger">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-badge" id="cart-count" style="display: none;">0</span>
                     </button>
                 </div>
-                <div class="image">
-                    <img src="MEN/men3.png" alt="">
-                </div>
             </div>
-
-            <div class="slide">
-                <div class="content">
-                    <span></span>
-                    <h3>Trending</h3>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim consequatur reprehenderit.</p>
-                    <button class="btn">
-                        <span>shop now</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </button>
-                </div>
-                <div class="image">
-                    <img src="MEN/men1.png" alt="">
-                </div>
-            </div>
-
         </div>
+    </nav>
 
+    <!-- Page Header -->
+    <section class="py-5 mt-5 bg-gradient-custom text-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h1 class="display-4 fw-bold mb-3">Trending Now</h1>
+                    <p class="lead mb-0">Discover the latest and most popular sneakers. Stay ahead of the trends with our curated collection of trending footwear.</p>
+                </div>
+                <div class="col-lg-4 text-lg-end">
+                    <div class="d-flex gap-2 justify-content-lg-end">
+                        <select class="form-select" style="width: auto;">
+                            <option>Sort by</option>
+                            <option>Price: Low to High</option>
+                            <option>Price: High to Low</option>
+                            <option>Newest</option>
+                            <option>Most Popular</option>
+                        </select>
+                        <button class="btn btn-light">
+                            <i class="fas fa-filter"></i> Filter
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- home section ends -->
-
-    <!-- latest product section starts -->
-
-    <section class="products" id="products">
-
-        <h1 class="heading"><span>latest</span> Mens</h1>
-
-        <div class="box-container">
-
-            <div class="box">
-                <div class="image">
-                    <img src="MEN/men1.png" alt="">
+    <!-- Trending Banner -->
+    <section class="py-4 bg-dark text-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <h4 class="mb-2"><i class="fas fa-fire me-2 text-warning"></i>Hot This Week</h4>
+                    <p class="mb-0">Check out what's trending in the sneaker world right now</p>
                 </div>
-                <div class="content">
-                    <h3>VANS SK8 HIGH</h3>
-                    <div class="price">₱4,299</div>
-                    <h3>US SIZE: 7-13</h3>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <span>(50)</span>
-                    </div>
-                    <a href="#" class="btn"> <i class="far fa-heart"></i></a>
+                <div class="col-md-4 text-md-end">
+                    <span class="badge bg-warning text-dark fs-6">Trending</span>
                 </div>
             </div>
-
-            <div class="box">
-                <div class="image">
-                    <img src="MEN/men9.png" alt="">
-                </div>
-                <div class="content">
-                    <h3>Air Jordan 1 Low SE</h3>
-                    <div class="price">₱6,399</div>
-                    <h3>US SIZE: 7-13</h3>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <span>(50)</span>
-                    </div>
-                    <a href="#" class="btn"> <i class="far fa-heart"></i></a>
-                </div>
-            </div>
-
-            <div class="box">
-                <div class="image">
-                    <img src="MEN/men10.png" alt="">
-                </div>
-                <div class="content">
-                    <h3>Black Chuck Taylor All Star High</h3>
-                    <div class="price">₱4,399</div>
-                    <h3>US SIZE: 7-13</h3>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <span>(50)</span>
-                    </div>
-                    <a href="#" class="btn"> <i class="far fa-heart"></i></a>
-                </div>
-            </div>
-
-            <div class="box">
-                <div class="image">
-                    <img src="MEN/men2.png" alt="">
-                </div>
-                <div class="content">
-                    <h3>Vlado Stenzel 'The Never Worn</h3>
-                    <div class="price">₱10,699</div>
-                    <h3>US SIZE: 7-13</h3>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <span>(50)</span>
-                    </div>
-                    <a href="#" class="btn"> <i class="far fa-heart"></i></a>
-                </div>
-            </div>
-
-            <div class="box">
-                <div class="image">
-                    <img src="MEN/men3.png" alt="">
-                </div>
-                <div class="content">
-                    <h3>Jordan 1 Retro High OG Chicago Lost and Found</h3>
-                    <div class="price">₱19,999</div>
-                    <h3>US SIZE: 7-13</h3>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <span>(50)</span>
-                    </div>
-                    <a href="#" class="btn"> <i class="far fa-heart"></i></a>
-                </div>
-            </div>
-
-            <div class="box">
-                <div class="image">
-                    <img src="MEN/men4.png" alt="">
-                </div>
-                <div class="content">
-                    <h3>NIKE DUNK LOW PANDA</h3>
-                    <div class="price">₱9,999</div>
-                    <h3>US SIZE: 7-13</h3>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <span>(50)</span>
-                    </div>
-                    <a href="#" class="btn"> <i class="far fa-heart"></i></a>
-                </div>
-            </div>
-
-            <div class="box">
-                <div class="image">
-                    <img src="MEN/men5.png" alt="">
-                </div>
-                <div class="content">
-                    <h3>MEXICO 66 ONITSUKA TIGER</h3>
-                    <div class="price">₱7,999</div>
-                    <h3>US SIZE: 7-13</h3>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <span>(50)</span>
-                    </div>
-                    <a href="#" class="btn"> <i class="far fa-heart"></i></a>
-                </div>
-            </div>
-
-            <div class="box">
-                <div class="image">
-                    <img src="MEN/men6.png" alt="">
-                </div>
-                <div class="content">
-                    <h3>Nike Blazer Mid 77 Jumbo</h3>
-                    <div class="price">₱5,999</div>
-                    <h3>US SIZE: 7-13</h3>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <span>(50)</span>
-                    </div>
-                    <a href="#" class="btn"> <i class="far fa-heart"></i></a>
-                </div>
-            </div>
-
         </div>
-
     </section>
 
-    <section class="products" id="products">
-
-        <h1 class="heading"><span>latest</span> Womens</h1>
-
-        <div class="box-container">
-
-            <div class="box">
-                <div class="image">
-                    <img src="MEN/men1.png" alt="">
-                </div>
-                <div class="content">
-                    <h3>VANS SK8 HIGH</h3>
-                    <div class="price">₱4,299</div>
-                    <h3>US SIZE: 7-13</h3>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <span>(50)</span>
+    <!-- Products Grid -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Product 1 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="product-card card h-100">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=300&h=200&q=80&fit=crop" class="card-img-top product-image" alt="Nike Dunk Low">
+                            <button class="wishlist-btn" data-product-id="nike-dunk-low-trend">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <span class="badge bg-danger position-absolute top-0 start-0 m-2">Trending</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="product-title">Nike Dunk Low</h5>
+                            <div class="product-rating mb-2">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span class="ms-2 text-muted">(4.9)</span>
+                            </div>
+                            <p class="product-price">$110.00</p>
+                            <p class="text-muted small">Sizes: 7-12 US</p>
+                            <button class="btn btn-primary w-100 add-to-cart-btn" 
+                                    data-product-id="nike-dunk-low-trend"
+                                    data-product-name="Nike Dunk Low"
+                                    data-product-price="110.00"
+                                    data-product-image="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=300&h=200&q=80&fit=crop">
+                                Add to Cart
+                            </button>
+                        </div>
                     </div>
-                    <a href="#" class="btn"> <i class="far fa-heart"></i></a>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="product-card card h-100">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=300&h=200&q=80&fit=crop" class="card-img-top product-image" alt="Yeezy 350 V2">
+                            <button class="wishlist-btn" data-product-id="yeezy-350-v2-trend">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <span class="badge bg-warning text-dark position-absolute top-0 start-0 m-2">New</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="product-title">Yeezy 350 V2</h5>
+                            <div class="product-rating mb-2">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span class="ms-2 text-muted">(4.8)</span>
+                            </div>
+                            <p class="product-price">$220.00</p>
+                            <p class="text-muted small">Sizes: 7-12 US</p>
+                            <button class="btn btn-primary w-100 add-to-cart-btn" 
+                                    data-product-id="yeezy-350-v2-trend"
+                                    data-product-name="Yeezy 350 V2"
+                                    data-product-price="220.00"
+                                    data-product-image="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=300&h=200&q=80&fit=crop">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="product-card card h-100">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=300&h=200&q=80&fit=crop" class="card-img-top product-image" alt="Off-White Chuck 70">
+                            <button class="wishlist-btn" data-product-id="off-white-chuck-70-trend">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <span class="badge bg-success position-absolute top-0 start-0 m-2">Limited</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="product-title">Off-White Chuck 70</h5>
+                            <div class="product-rating mb-2">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span class="ms-2 text-muted">(4.7)</span>
+                            </div>
+                            <p class="product-price">$170.00</p>
+                            <p class="text-muted small">Sizes: 7-12 US</p>
+                            <button class="btn btn-primary w-100 add-to-cart-btn" 
+                                    data-product-id="off-white-chuck-70-trend"
+                                    data-product-name="Off-White Chuck 70"
+                                    data-product-price="170.00"
+                                    data-product-image="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=300&h=200&q=80&fit=crop">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="product-card card h-100">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=300&h=200&q=80&fit=crop" class="card-img-top product-image" alt="Travis Scott Jordan 1">
+                            <button class="wishlist-btn" data-product-id="travis-scott-jordan-1-trend">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <span class="badge bg-danger position-absolute top-0 start-0 m-2">Hot</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="product-title">Travis Scott Jordan 1</h5>
+                            <div class="product-rating mb-2">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span class="ms-2 text-muted">(4.9)</span>
+                            </div>
+                            <p class="product-price">$1,200.00</p>
+                            <p class="text-muted small">Sizes: 7-12 US</p>
+                            <button class="btn btn-primary w-100 add-to-cart-btn" 
+                                    data-product-id="travis-scott-jordan-1-trend"
+                                    data-product-name="Travis Scott Jordan 1"
+                                    data-product-price="1200.00"
+                                    data-product-image="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=300&h=200&q=80&fit=crop">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="product-card card h-100">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=300&h=200&q=80&fit=crop" class="card-img-top product-image" alt="New Balance 550">
+                            <button class="wishlist-btn" data-product-id="new-balance-550-trend">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <span class="badge bg-info position-absolute top-0 start-0 m-2">Popular</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="product-title">New Balance 550</h5>
+                            <div class="product-rating mb-2">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span class="ms-2 text-muted">(4.8)</span>
+                            </div>
+                            <p class="product-price">$100.00</p>
+                            <p class="text-muted small">Sizes: 7-12 US</p>
+                            <button class="btn btn-primary w-100 add-to-cart-btn" 
+                                    data-product-id="new-balance-550-trend"
+                                    data-product-name="New Balance 550"
+                                    data-product-price="100.00"
+                                    data-product-image="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=300&h=200&q=80&fit=crop">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="product-card card h-100">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=300&h=200&q=80&fit=crop" class="card-img-top product-image" alt="Air Jordan 4 Retro">
+                            <button class="wishlist-btn" data-product-id="air-jordan-4-retro-trend">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <span class="badge bg-warning text-dark position-absolute top-0 start-0 m-2">New</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="product-title">Air Jordan 4 Retro</h5>
+                            <div class="product-rating mb-2">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span class="ms-2 text-muted">(4.6)</span>
+                            </div>
+                            <p class="product-price">$200.00</p>
+                            <p class="text-muted small">Sizes: 7-12 US</p>
+                            <button class="btn btn-primary w-100 add-to-cart-btn" 
+                                    data-product-id="air-jordan-4-retro-trend"
+                                    data-product-name="Air Jordan 4 Retro"
+                                    data-product-price="200.00"
+                                    data-product-image="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=300&h=200&q=80&fit=crop">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 7 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="product-card card h-100">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=300&h=200&q=80&fit=crop" class="card-img-top product-image" alt="Adidas Forum Low">
+                            <button class="wishlist-btn" data-product-id="adidas-forum-low-trend">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <span class="badge bg-success position-absolute top-0 start-0 m-2">Limited</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="product-title">Adidas Forum Low</h5>
+                            <div class="product-rating mb-2">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span class="ms-2 text-muted">(4.7)</span>
+                            </div>
+                            <p class="product-price">$90.00</p>
+                            <p class="text-muted small">Sizes: 7-12 US</p>
+                            <button class="btn btn-primary w-100 add-to-cart-btn" 
+                                    data-product-id="adidas-forum-low-trend"
+                                    data-product-name="Adidas Forum Low"
+                                    data-product-price="90.00"
+                                    data-product-image="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=300&h=200&q=80&fit=crop">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 8 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="product-card card h-100">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=300&h=200&q=80&fit=crop" class="card-img-top product-image" alt="Converse Chuck 70 High">
+                            <button class="wishlist-btn" data-product-id="converse-chuck-70-high-trend">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <span class="badge bg-danger position-absolute top-0 start-0 m-2">Trending</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="product-title">Converse Chuck 70 High</h5>
+                            <div class="product-rating mb-2">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span class="ms-2 text-muted">(4.5)</span>
+                            </div>
+                            <p class="product-price">$95.00</p>
+                            <p class="text-muted small">Sizes: 7-12 US</p>
+                            <button class="btn btn-primary w-100 add-to-cart-btn" 
+                                    data-product-id="converse-chuck-70-high-trend"
+                                    data-product-name="Converse Chuck 70 High"
+                                    data-product-price="95.00"
+                                    data-product-image="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=300&h=200&q=80&fit=crop">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            <div class="box">
-                <div class="image">
-                    <img src="MEN/men9.png" alt="">
-                </div>
-                <div class="content">
-                    <h3>Air Jordan 1 Low SE</h3>
-                    <div class="price">₱6,399</div>
-                    <h3>US SIZE: 7-13</h3>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <span>(50)</span>
-                    </div>
-                    <a href="#" class="btn"> <i class="far fa-heart"></i></a>
-                </div>
-            </div>
-
-            <div class="box">
-                <div class="image">
-                    <img src="MEN/men10.png" alt="">
-                </div>
-                <div class="content">
-                    <h3>Black Chuck Taylor All Star High</h3>
-                    <div class="price">₱4,399</div>
-                    <h3>US SIZE: 7-13</h3>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <span>(50)</span>
-                    </div>
-                    <a href="#" class="btn"> <i class="far fa-heart"></i></a>
-                </div>
-            </div>
-
-            <div class="box">
-                <div class="image">
-                    <img src="MEN/men2.png" alt="">
-                </div>
-                <div class="content">
-                    <h3>Vlado Stenzel 'The Never Worn</h3>
-                    <div class="price">₱10,699</div>
-                    <h3>US SIZE: 7-13</h3>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <span>(50)</span>
-                    </div>
-                    <a href="#" class="btn"> <i class="far fa-heart"></i></a>
-                </div>
-            </div>
-
-            <div class="box">
-                <div class="image">
-                    <img src="MEN/men3.png" alt="">
-                </div>
-                <div class="content">
-                    <h3>Jordan 1 Retro High OG Chicago Lost and Found</h3>
-                    <div class="price">₱19,999</div>
-                    <h3>US SIZE: 7-13</h3>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <span>(50)</span>
-                    </div>
-                    <a href="#" class="btn"> <i class="far fa-heart"></i></a>
-                </div>
-            </div>
-
-            <div class="box">
-                <div class="image">
-                    <img src="MEN/men4.png" alt="">
-                </div>
-                <div class="content">
-                    <h3>NIKE DUNK LOW PANDA</h3>
-                    <div class="price">₱9,999</div>
-                    <h3>US SIZE: 7-13</h3>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <span>(50)</span>
-                    </div>
-                    <a href="#" class="btn"> <i class="far fa-heart"></i></a>
-                </div>
-            </div>
-
-            <div class="box">
-                <div class="image">
-                    <img src="MEN/men5.png" alt="">
-                </div>
-                <div class="content">
-                    <h3>MEXICO 66 ONITSUKA TIGER</h3>
-                    <div class="price">₱7,999</div>
-                    <h3>US SIZE: 7-13</h3>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <span>(50)</span>
-                    </div>
-                    <a href="#" class="btn"> <i class="far fa-heart"></i></a>
-                </div>
-            </div>
-
-            <div class="box">
-                <div class="image">
-                    <img src="MEN/men6.png" alt="">
-                </div>
-                <div class="content">
-                    <h3>Nike Blazer Mid 77 Jumbo</h3>
-                    <div class="price">₱5,999</div>
-                    <h3>US SIZE: 7-13</h3>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <span>(50)</span>
-                    </div>
-                    <a href="#" class="btn"> <i class="far fa-heart"></i></a>
-                </div>
-            </div>
-
         </div>
-
     </section>
 
-    <section class="products" id="products">
-
-        <h1 class="heading"><span>latest</span> Sports</h1>
-
-        <div class="box-container">
-
-            <div class="box">
-                <div class="image">
-                    <img src="MEN/men1.png" alt="">
-                </div>
-                <div class="content">
-                    <h3>VANS SK8 HIGH</h3>
-                    <div class="price">₱4,299</div>
-                    <h3>US SIZE: 7-13</h3>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <span>(50)</span>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5><i class="fas fa-shoe-prints me-2"></i>SneakHub</h5>
+                    <p class="text-muted">Your premier destination for premium sneakers and customization services. Quality, style, and comfort in every step.</p>
+                    <div class="social-links">
+                        <a href="https://facebook.com/sneakhub"><i class="fab fa-facebook"></i></a>
+                        <a href="https://twitter.com/sneakhub"><i class="fab fa-twitter"></i></a>
+                        <a href="https://instagram.com/sneakhub"><i class="fab fa-instagram"></i></a>
+                        <a href="https://youtube.com/sneakhub"><i class="fab fa-youtube"></i></a>
                     </div>
-                    <a href="#" class="btn"> <i class="far fa-heart"></i></a>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Products</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="male.html">Men's Shoes</a></li>
+                        <li><a href="women.html">Women's Shoes</a></li>
+                        <li><a href="kids.html">Kids' Shoes</a></li>
+                        <li><a href="sport.html">Sports Shoes</a></li>
+                        <li><a href="trend.html">Trending</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Services</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="service.html">Customization</a></li>
+                        <li><a href="service.html">Size Guide</a></li>
+                        <li><a href="service.html">Shoe Care</a></li>
+                        <li><a href="service.html">Repairs</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Company</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="sale.html">Sale</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Support</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="shipping.html">Shipping</a></li>
+                        <li><a href="returns.html">Returns</a></li>
+                        <li><a href="size-guide.html">Size Guide</a></li>
+                    </ul>
                 </div>
             </div>
-
-            <div class="box">
-                <div class="image">
-                    <img src="MEN/men9.png" alt="">
+            
+            <hr class="my-4">
+            
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0 text-muted">&copy; 2025 SneakHub. All rights reserved.</p>
                 </div>
-                <div class="content">
-                    <h3>Air Jordan 1 Low SE</h3>
-                    <div class="price">₱6,399</div>
-                    <h3>US SIZE: 7-13</h3>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <span>(50)</span>
-                    </div>
-                    <a href="#" class="btn"> <i class="far fa-heart"></i></a>
+                <div class="col-md-6 text-md-end">
+                    <a href="privacy.html" class="text-muted me-3">Privacy Policy</a>
+                    <a href="terms.html" class="text-muted">Terms of Service</a>
                 </div>
             </div>
-
-            <div class="box">
-                <div class="image">
-                    <img src="MEN/men10.png" alt="">
-                </div>
-                <div class="content">
-                    <h3>Black Chuck Taylor All Star High</h3>
-                    <div class="price">₱4,399</div>
-                    <h3>US SIZE: 7-13</h3>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <span>(50)</span>
-                    </div>
-                    <a href="#" class="btn"> <i class="far fa-heart"></i></a>
-                </div>
-            </div>
-
-            <div class="box">
-                <div class="image">
-                    <img src="MEN/men2.png" alt="">
-                </div>
-                <div class="content">
-                    <h3>Vlado Stenzel 'The Never Worn</h3>
-                    <div class="price">₱10,699</div>
-                    <h3>US SIZE: 7-13</h3>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <span>(50)</span>
-                    </div>
-                    <a href="#" class="btn"> <i class="far fa-heart"></i></a>
-                </div>
-            </div>
-
-            <div class="box">
-                <div class="image">
-                    <img src="MEN/men3.png" alt="">
-                </div>
-                <div class="content">
-                    <h3>Jordan 1 Retro High OG Chicago Lost and Found</h3>
-                    <div class="price">₱19,999</div>
-                    <h3>US SIZE: 7-13</h3>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <span>(50)</span>
-                    </div>
-                    <a href="#" class="btn"> <i class="far fa-heart"></i></a>
-                </div>
-            </div>
-
-            <div class="box">
-                <div class="image">
-                    <img src="MEN/men4.png" alt="">
-                </div>
-                <div class="content">
-                    <h3>NIKE DUNK LOW PANDA</h3>
-                    <div class="price">₱9,999</div>
-                    <h3>US SIZE: 7-13</h3>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <span>(50)</span>
-                    </div>
-                    <a href="#" class="btn"> <i class="far fa-heart"></i></a>
-                </div>
-            </div>
-
-            <div class="box">
-                <div class="image">
-                    <img src="MEN/men5.png" alt="">
-                </div>
-                <div class="content">
-                    <h3>MEXICO 66 ONITSUKA TIGER</h3>
-                    <div class="price">₱7,999</div>
-                    <h3>US SIZE: 7-13</h3>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <span>(50)</span>
-                    </div>
-                    <a href="#" class="btn"> <i class="far fa-heart"></i></a>
-                </div>
-            </div>
-
-            <div class="box">
-                <div class="image">
-                    <img src="MEN/men6.png" alt="">
-                </div>
-                <div class="content">
-                    <h3>Nike Blazer Mid 77 Jumbo</h3>
-                    <div class="price">₱5,999</div>
-                    <h3>US SIZE: 7-13</h3>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <span>(50)</span>
-                    </div>
-                    <a href="#" class="btn"> <i class="far fa-heart"></i></a>
-                </div>
-            </div>
-
         </div>
+    </footer>
 
-    </section>
-
-    <section class="products" id="products">
-
-        <h1 class="heading"><span>latest</span> Kids</h1>
-
-        <div class="box-container">
-
-            <div class="box">
-                <div class="image">
-                    <img src="MEN/men1.png" alt="">
+    <!-- Cart Modal -->
+    <div class="modal fade" id="cartModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">
+                        <i class="fas fa-shopping-cart me-2"></i>Shopping Cart
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
-                <div class="content">
-                    <h3>VANS SK8 HIGH</h3>
-                    <div class="price">₱4,299</div>
-                    <h3>US SIZE: 7-13</h3>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <span>(50)</span>
+                <div class="modal-body">
+                    <div id="cart-items">
+                        <!-- Cart items will be populated here -->
                     </div>
-                    <a href="#" class="btn"> <i class="far fa-heart"></i></a>
+                </div>
+                <div class="modal-footer">
+                    <div class="d-flex justify-content-between w-100">
+                        <div>
+                            <div class="d-flex justify-content-between">
+                                <span>Subtotal:</span>
+                                <span id="cart-subtotal">$0.00</span>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <span>Tax:</span>
+                                <span id="cart-tax">$0.00</span>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <span>Shipping:</span>
+                                <span id="cart-shipping">$0.00</span>
+                            </div>
+                            <hr>
+                            <div class="d-flex justify-content-between fw-bold">
+                                <span>Total:</span>
+                                <span id="cart-total" class="text-primary-custom">$0.00</span>
+                            </div>
+                        </div>
+                        <div class="d-flex gap-2">
+                            <button class="btn btn-outline-secondary" onclick="clearCart()">Clear Cart</button>
+                            <button class="btn btn-primary" onclick="proceedToCheckout()">Checkout</button>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            <div class="box">
-                <div class="image">
-                    <img src="MEN/men9.png" alt="">
-                </div>
-                <div class="content">
-                    <h3>Air Jordan 1 Low SE</h3>
-                    <div class="price">₱6,399</div>
-                    <h3>US SIZE: 7-13</h3>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <span>(50)</span>
-                    </div>
-                    <a href="#" class="btn"> <i class="far fa-heart"></i></a>
-                </div>
-            </div>
-
-            <div class="box">
-                <div class="image">
-                    <img src="MEN/men10.png" alt="">
-                </div>
-                <div class="content">
-                    <h3>Black Chuck Taylor All Star High</h3>
-                    <div class="price">₱4,399</div>
-                    <h3>US SIZE: 7-13</h3>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <span>(50)</span>
-                    </div>
-                    <a href="#" class="btn"> <i class="far fa-heart"></i></a>
-                </div>
-            </div>
-
-            <div class="box">
-                <div class="image">
-                    <img src="MEN/men2.png" alt="">
-                </div>
-                <div class="content">
-                    <h3>Vlado Stenzel 'The Never Worn</h3>
-                    <div class="price">₱10,699</div>
-                    <h3>US SIZE: 7-13</h3>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <span>(50)</span>
-                    </div>
-                    <a href="#" class="btn"> <i class="far fa-heart"></i></a>
-                </div>
-            </div>
-
-            <div class="box">
-                <div class="image">
-                    <img src="MEN/men3.png" alt="">
-                </div>
-                <div class="content">
-                    <h3>Jordan 1 Retro High OG Chicago Lost and Found</h3>
-                    <div class="price">₱19,999</div>
-                    <h3>US SIZE: 7-13</h3>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <span>(50)</span>
-                    </div>
-                    <a href="#" class="btn"> <i class="far fa-heart"></i></a>
-                </div>
-            </div>
-
-            <div class="box">
-                <div class="image">
-                    <img src="MEN/men4.png" alt="">
-                </div>
-                <div class="content">
-                    <h3>NIKE DUNK LOW PANDA</h3>
-                    <div class="price">₱9,999</div>
-                    <h3>US SIZE: 7-13</h3>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <span>(50)</span>
-                    </div>
-                    <a href="#" class="btn"> <i class="far fa-heart"></i></a>
-                </div>
-            </div>
-
-            <div class="box">
-                <div class="image">
-                    <img src="MEN/men5.png" alt="">
-                </div>
-                <div class="content">
-                    <h3>MEXICO 66 ONITSUKA TIGER</h3>
-                    <div class="price">₱7,999</div>
-                    <h3>US SIZE: 7-13</h3>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <span>(50)</span>
-                    </div>
-                    <a href="#" class="btn"> <i class="far fa-heart"></i></a>
-                </div>
-            </div>
-
-            <div class="box">
-                <div class="image">
-                    <img src="MEN/men6.png" alt="">
-                </div>
-                <div class="content">
-                    <h3>Nike Blazer Mid 77 Jumbo</h3>
-                    <div class="price">₱5,999</div>
-                    <h3>US SIZE: 7-13</h3>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <span>(50)</span>
-                    </div>
-                    <a href="#" class="btn"> <i class="far fa-heart"></i></a>
-                </div>
-            </div>
-
         </div>
+    </div>
 
-    </section>
-    <!-- swiper js cdn link -->
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-    <!-- custom js file link  -->
-    <script src="women.js"></script>
+    
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <!-- Custom JS -->
+    <script src="js/app.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/forms.js"></script>
+    <script src="js/slider.js"></script>
+    <script src="js/cart.js"></script>
 </body>
 </html>

@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Size Guide - SneakHub</title>
+    <meta name="description" content="Find the perfect shoe size with SneakHub's comprehensive size guide. Conversion charts for men's, women's, and kids' shoes.">
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Boxicons -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-shoe-prints me-2"></i>SneakHub
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Products
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="male.html">Men's Shoes</a></li>
+                            <li><a class="dropdown-item" href="women.html">Women's Shoes</a></li>
+                            <li><a class="dropdown-item" href="kids.html">Kids' Shoes</a></li>
+                            <li><a class="dropdown-item" href="sport.html">Sports Shoes</a></li>
+                            <li><a class="dropdown-item" href="trend.html">Trending</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="team.html">Team</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="service.html">Services</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                
+                <!-- Search Bar -->
+                <div class="d-flex align-items-center me-3">
+                    <div class="position-relative">
+                        <input type="text" class="form-control" placeholder="Search products..." id="search-input">
+                        <div id="search-results" class="position-absolute bg-white border rounded shadow-lg" style="top: 100%; left: 0; right: 0; z-index: 1000; display: none; max-height: 300px; overflow-y: auto;"></div>
+                    </div>
+                </div>
+                
+                <!-- Cart -->
+                <div class="d-flex align-items-center">
+                    <button class="btn btn-outline-light position-relative" id="cart-modal-trigger">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-badge" id="cart-count" style="display: none;">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header bg-gradient-custom text-white py-5" style="margin-top: 76px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="display-4 fw-bold mb-3">Size Guide</h1>
+                    <p class="lead">Find your perfect fit with our comprehensive size conversion charts and measuring guide</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Size Guide Content -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <!-- How to Measure -->
+                    <div class="mb-5">
+                        <h2 class="h3 text-primary-custom mb-4">
+                            <i class="fas fa-ruler me-2"></i>How to Measure Your Feet
+                        </h2>
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <div class="card border-0 shadow-sm">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Step-by-Step Measuring Guide</h5>
+                                        <ol class="mb-4">
+                                            <li class="mb-2"><strong>Prepare:</strong> Stand on a piece of paper with your heel against a wall</li>
+                                            <li class="mb-2"><strong>Trace:</strong> Have someone trace around your foot, keeping the pencil perpendicular</li>
+                                            <li class="mb-2"><strong>Measure:</strong> Measure from the longest toe to the back of the heel</li>
+                                            <li class="mb-2"><strong>Repeat:</strong> Measure both feet and use the larger measurement</li>
+                                            <li class="mb-2"><strong>Add space:</strong> Add 0.5-1cm (0.2-0.4 inches) for comfort</li>
+                                        </ol>
+                                        <div class="alert alert-info">
+                                            <i class="fas fa-lightbulb me-2"></i>
+                                            <strong>Pro Tip:</strong> Measure your feet at the end of the day when they're at their largest, and always measure while standing.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="card bg-light">
+                                    <div class="card-body text-center">
+                                        <i class="fas fa-shoe-prints fa-3x text-primary-custom mb-3"></i>
+                                        <h5>Need Help?</h5>
+                                        <p class="text-muted small">Our customer service team can help you find the perfect size.</p>
+                                        <a href="contact.html" class="btn btn-primary btn-sm">Contact Us</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Men's Size Chart -->
+                    <div class="mb-5">
+                        <h2 class="h3 text-primary-custom mb-4">
+                            <i class="fas fa-male me-2"></i>Men's Size Chart
+                        </h2>
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-striped table-hover">
+                                        <thead class="table-dark">
+                                            <tr>
+                                                <th>US Size</th>
+                                                <th>UK Size</th>
+                                                <th>EU Size</th>
+                                                <th>CM</th>
+                                                <th>Inches</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>6</td>
+                                                <td>5.5</td>
+                                                <td>39</td>
+                                                <td>24.5</td>
+                                                <td>9.6</td>
+                                            </tr>
+                                            <tr>
+                                                <td>6.5</td>
+                                                <td>6</td>
+                                                <td>39.5</td>
+                                                <td>25</td>
+                                                <td>9.8</td>
+                                            </tr>
+                                            <tr>
+                                                <td>7</td>
+                                                <td>6.5</td>
+                                                <td>40</td>
+                                                <td>25.5</td>
+                                                <td>10</td>
+                                            </tr>
+                                            <tr>
+                                                <td>7.5</td>
+                                                <td>7</td>
+                                                <td>40.5</td>
+                                                <td>26</td>
+                                                <td>10.2</td>
+                                            </tr>
+                                            <tr>
+                                                <td>8</td>
+                                                <td>7.5</td>
+                                                <td>41</td>
+                                                <td>26.5</td>
+                                                <td>10.4</td>
+                                            </tr>
+                                            <tr>
+                                                <td>8.5</td>
+                                                <td>8</td>
+                                                <td>41.5</td>
+                                                <td>27</td>
+                                                <td>10.6</td>
+                                            </tr>
+                                            <tr>
+                                                <td>9</td>
+                                                <td>8.5</td>
+                                                <td>42</td>
+                                                <td>27.5</td>
+                                                <td>10.8</td>
+                                            </tr>
+                                            <tr>
+                                                <td>9.5</td>
+                                                <td>9</td>
+                                                <td>42.5</td>
+                                                <td>28</td>
+                                                <td>11</td>
+                                            </tr>
+                                            <tr>
+                                                <td>10</td>
+                                                <td>9.5</td>
+                                                <td>43</td>
+                                                <td>28.5</td>
+                                                <td>11.2</td>
+                                            </tr>
+                                            <tr>
+                                                <td>10.5</td>
+                                                <td>10</td>
+                                                <td>43.5</td>
+                                                <td>29</td>
+                                                <td>11.4</td>
+                                            </tr>
+                                            <tr>
+                                                <td>11</td>
+                                                <td>10.5</td>
+                                                <td>44</td>
+                                                <td>29.5</td>
+                                                <td>11.6</td>
+                                            </tr>
+                                            <tr>
+                                                <td>11.5</td>
+                                                <td>11</td>
+                                                <td>44.5</td>
+                                                <td>30</td>
+                                                <td>11.8</td>
+                                            </tr>
+                                            <tr>
+                                                <td>12</td>
+                                                <td>11.5</td>
+                                                <td>45</td>
+                                                <td>30.5</td>
+                                                <td>12</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Women's Size Chart -->
+                    <div class="mb-5">
+                        <h2 class="h3 text-primary-custom mb-4">
+                            <i class="fas fa-female me-2"></i>Women's Size Chart
+                        </h2>
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-striped table-hover">
+                                        <thead class="table-dark">
+                                            <tr>
+                                                <th>US Size</th>
+                                                <th>UK Size</th>
+                                                <th>EU Size</th>
+                                                <th>CM</th>
+                                                <th>Inches</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>5</td>
+                                                <td>3</td>
+                                                <td>36</td>
+                                                <td>22.5</td>
+                                                <td>8.9</td>
+                                            </tr>
+                                            <tr>
+                                                <td>5.5</td>
+                                                <td>3.5</td>
+                                                <td>36.5</td>
+                                                <td>23</td>
+                                                <td>9.1</td>
+                                            </tr>
+                                            <tr>
+                                                <td>6</td>
+                                                <td>4</td>
+                                                <td>37</td>
+                                                <td>23.5</td>
+                                                <td>9.3</td>
+                                            </tr>
+                                            <tr>
+                                                <td>6.5</td>
+                                                <td>4.5</td>
+                                                <td>37.5</td>
+                                                <td>24</td>
+                                                <td>9.4</td>
+                                            </tr>
+                                            <tr>
+                                                <td>7</td>
+                                                <td>5</td>
+                                                <td>38</td>
+                                                <td>24.5</td>
+                                                <td>9.6</td>
+                                            </tr>
+                                            <tr>
+                                                <td>7.5</td>
+                                                <td>5.5</td>
+                                                <td>38.5</td>
+                                                <td>25</td>
+                                                <td>9.8</td>
+                                            </tr>
+                                            <tr>
+                                                <td>8</td>
+                                                <td>6</td>
+                                                <td>39</td>
+                                                <td>25.5</td>
+                                                <td>10</td>
+                                            </tr>
+                                            <tr>
+                                                <td>8.5</td>
+                                                <td>6.5</td>
+                                                <td>39.5</td>
+                                                <td>26</td>
+                                                <td>10.2</td>
+                                            </tr>
+                                            <tr>
+                                                <td>9</td>
+                                                <td>7</td>
+                                                <td>40</td>
+                                                <td>26.5</td>
+                                                <td>10.4</td>
+                                            </tr>
+                                            <tr>
+                                                <td>9.5</td>
+                                                <td>7.5</td>
+                                                <td>40.5</td>
+                                                <td>27</td>
+                                                <td>10.6</td>
+                                            </tr>
+                                            <tr>
+                                                <td>10</td>
+                                                <td>8</td>
+                                                <td>41</td>
+                                                <td>27.5</td>
+                                                <td>10.8</td>
+                                            </tr>
+                                            <tr>
+                                                <td>10.5</td>
+                                                <td>8.5</td>
+                                                <td>41.5</td>
+                                                <td>28</td>
+                                                <td>11</td>
+                                            </tr>
+                                            <tr>
+                                                <td>11</td>
+                                                <td>9</td>
+                                                <td>42</td>
+                                                <td>28.5</td>
+                                                <td>11.2</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Kids' Size Chart -->
+                    <div class="mb-5">
+                        <h2 class="h3 text-primary-custom mb-4">
+                            <i class="fas fa-child me-2"></i>Kids' Size Chart
+                        </h2>
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <h5 class="text-primary-custom">Little Kids (Toddler)</h5>
+                                        <div class="table-responsive">
+                                            <table class="table table-sm table-striped">
+                                                <thead class="table-dark">
+                                                    <tr>
+                                                        <th>US Size</th>
+                                                        <th>EU Size</th>
+                                                        <th>CM</th>
+                                                        <th>Inches</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr><td>4</td><td>20</td><td>12.5</td><td>4.9</td></tr>
+                                                    <tr><td>5</td><td>21</td><td>13</td><td>5.1</td></tr>
+                                                    <tr><td>6</td><td>22</td><td>13.5</td><td>5.3</td></tr>
+                                                    <tr><td>7</td><td>23</td><td>14</td><td>5.5</td></tr>
+                                                    <tr><td>8</td><td>24</td><td>14.5</td><td>5.7</td></tr>
+                                                    <tr><td>9</td><td>25</td><td>15</td><td>5.9</td></tr>
+                                                    <tr><td>10</td><td>26</td><td>15.5</td><td>6.1</td></tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <h5 class="text-primary-custom">Big Kids (Youth)</h5>
+                                        <div class="table-responsive">
+                                            <table class="table table-sm table-striped">
+                                                <thead class="table-dark">
+                                                    <tr>
+                                                        <th>US Size</th>
+                                                        <th>EU Size</th>
+                                                        <th>CM</th>
+                                                        <th>Inches</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr><td>10.5</td><td>27</td><td>16</td><td>6.3</td></tr>
+                                                    <tr><td>11</td><td>28</td><td>16.5</td><td>6.5</td></tr>
+                                                    <tr><td>11.5</td><td>29</td><td>17</td><td>6.7</td></tr>
+                                                    <tr><td>12</td><td>30</td><td>17.5</td><td>6.9</td></tr>
+                                                    <tr><td>12.5</td><td>31</td><td>18</td><td>7.1</td></tr>
+                                                    <tr><td>13</td><td>32</td><td>18.5</td><td>7.3</td></tr>
+                                                    <tr><td>13.5</td><td>33</td><td>19</td><td>7.5</td></tr>
+                                                    <tr><td>1</td><td>34</td><td>19.5</td><td>7.7</td></tr>
+                                                    <tr><td>1.5</td><td>35</td><td>20</td><td>7.9</td></tr>
+                                                    <tr><td>2</td><td>36</td><td>20.5</td><td>8.1</td></tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Brand-Specific Sizing -->
+                    <div class="mb-5">
+                        <h2 class="h3 text-primary-custom mb-4">
+                            <i class="fas fa-star me-2"></i>Brand-Specific Sizing Notes
+                        </h2>
+                        <div class="row">
+                            <div class="col-lg-6 mb-4">
+                                <div class="card border-0 shadow-sm">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Nike</h5>
+                                        <ul class="list-unstyled small">
+                                            <li class="mb-1"><i class="fas fa-check text-success me-2"></i>Generally true to size</li>
+                                            <li class="mb-1"><i class="fas fa-exclamation-triangle text-warning me-2"></i>Air Max runs slightly large</li>
+                                            <li class="mb-1"><i class="fas fa-info text-info me-2"></i>Consider half size down for snug fit</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 mb-4">
+                                <div class="card border-0 shadow-sm">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Adidas</h5>
+                                        <ul class="list-unstyled small">
+                                            <li class="mb-1"><i class="fas fa-check text-success me-2"></i>True to size for most models</li>
+                                            <li class="mb-1"><i class="fas fa-exclamation-triangle text-warning me-2"></i>Ultraboost runs slightly small</li>
+                                            <li class="mb-1"><i class="fas fa-info text-info me-2"></i>Consider half size up for comfort</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 mb-4">
+                                <div class="card border-0 shadow-sm">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Jordan</h5>
+                                        <ul class="list-unstyled small">
+                                            <li class="mb-1"><i class="fas fa-check text-success me-2"></i>Generally true to size</li>
+                                            <li class="mb-1"><i class="fas fa-exclamation-triangle text-warning me-2"></i>Retro models may run narrow</li>
+                                            <li class="mb-1"><i class="fas fa-info text-info me-2"></i>Consider wide width if available</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 mb-4">
+                                <div class="card border-0 shadow-sm">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Converse</h5>
+                                        <ul class="list-unstyled small">
+                                            <li class="mb-1"><i class="fas fa-exclamation-triangle text-warning me-2"></i>Runs large - size down</li>
+                                            <li class="mb-1"><i class="fas fa-info text-info me-2"></i>Consider half to full size down</li>
+                                            <li class="mb-1"><i class="fas fa-check text-success me-2"></i>Chuck Taylor sizing is consistent</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Size Calculator -->
+                    <div class="mb-5">
+                        <h2 class="h3 text-primary-custom mb-4">
+                            <i class="fas fa-calculator me-2"></i>Size Calculator
+                        </h2>
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <h5>Find Your Size</h5>
+                                        <form id="sizeCalculator">
+                                            <div class="mb-3">
+                                                <label for="footLength" class="form-label">Foot Length (inches)</label>
+                                                <input type="number" class="form-control" id="footLength" step="0.1" min="8" max="13" placeholder="Enter foot length">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="gender" class="form-label">Gender</label>
+                                                <select class="form-select" id="gender">
+                                                    <option value="male">Men's</option>
+                                                    <option value="female">Women's</option>
+                                                    <option value="kids">Kids</option>
+                                                </select>
+                                            </div>
+                                            <button type="submit" class="btn btn-primary">Calculate Size</button>
+                                        </form>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div id="sizeResult" class="text-center" style="display: none;">
+                                            <div class="bg-primary-custom text-white rounded p-4">
+                                                <h4 id="recommendedSize" class="mb-2"></h4>
+                                                <p id="sizeDetails" class="mb-0"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tips for Perfect Fit -->
+                    <div class="mb-5">
+                        <h2 class="h3 text-primary-custom mb-4">
+                            <i class="fas fa-lightbulb me-2"></i>Tips for Perfect Fit
+                        </h2>
+                        <div class="row">
+                            <div class="col-lg-4 mb-4">
+                                <div class="card border-0 shadow-sm h-100">
+                                    <div class="card-body text-center">
+                                        <i class="fas fa-clock fa-2x text-primary-custom mb-3"></i>
+                                        <h5>Time of Day</h5>
+                                        <p class="text-muted">Measure your feet in the afternoon when they're at their largest size.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 mb-4">
+                                <div class="card border-0 shadow-sm h-100">
+                                    <div class="card-body text-center">
+                                        <i class="fas fa-socks fa-2x text-primary-custom mb-3"></i>
+                                        <h5>Wear Socks</h5>
+                                        <p class="text-muted">Measure while wearing the type of socks you'll wear with the shoes.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 mb-4">
+                                <div class="card border-0 shadow-sm h-100">
+                                    <div class="card-body text-center">
+                                        <i class="fas fa-balance-scale fa-2x text-primary-custom mb-3"></i>
+                                        <h5>Weight Distribution</h5>
+                                        <p class="text-muted">Stand with your full weight on both feet when measuring.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div class="text-center">
+                        <h3 class="mb-3">Still Unsure About Your Size?</h3>
+                        <p class="lead mb-4">Our sizing experts are here to help you find the perfect fit.</p>
+                        <div class="d-flex gap-3 justify-content-center flex-wrap">
+                            <a href="contact.html" class="btn btn-primary btn-lg">Contact Us</a>
+                            <a href="tel:+1-555-SNEAKER" class="btn btn-outline-primary btn-lg">
+                                <i class="fas fa-phone me-2"></i>Call Us
+                            </a>
+                            <a href="mailto:sizing@sneakhub.com" class="btn btn-outline-primary btn-lg">
+                                <i class="fas fa-envelope me-2"></i>Email Us
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5><i class="fas fa-shoe-prints me-2"></i>SneakHub</h5>
+                    <p class="text-muted">Your premier destination for premium sneakers and customization services. Quality, style, and comfort in every step.</p>
+                    <div class="social-links">
+                        <a href="https://facebook.com/sneakhub"><i class="fab fa-facebook"></i></a>
+                        <a href="https://twitter.com/sneakhub"><i class="fab fa-twitter"></i></a>
+                        <a href="https://instagram.com/sneakhub"><i class="fab fa-instagram"></i></a>
+                        <a href="https://youtube.com/sneakhub"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Products</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="male.html">Men's Shoes</a></li>
+                        <li><a href="women.html">Women's Shoes</a></li>
+                        <li><a href="kids.html">Kids' Shoes</a></li>
+                        <li><a href="sport.html">Sports Shoes</a></li>
+                        <li><a href="trend.html">Trending</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Services</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="service.html">Customization</a></li>
+                        <li><a href="size-guide.html">Size Guide</a></li>
+                        <li><a href="service.html">Shoe Care</a></li>
+                        <li><a href="service.html">Repairs</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Company</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="team.html">Our Team</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="sale.html">Sale</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Support</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="shipping.html">Shipping</a></li>
+                        <li><a href="returns.html">Returns</a></li>
+                        <li><a href="size-guide.html">Size Guide</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <hr class="my-4">
+            
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0 text-muted">&copy; 2025 SneakHub. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="privacy.html" class="text-muted me-3">Privacy Policy</a>
+                    <a href="terms.html" class="text-muted">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div class="modal fade" id="cartModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">
+                        <i class="fas fa-shopping-cart me-2"></i>Shopping Cart
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="cart-items">
+                        <!-- Cart items will be populated here -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="d-flex justify-content-between w-100">
+                        <div>
+                            <div class="d-flex justify-content-between">
+                                <span>Subtotal:</span>
+                                <span id="cart-subtotal">$0.00</span>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <span>Tax:</span>
+                                <span id="cart-tax">$0.00</span>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <span>Shipping:</span>
+                                <span id="cart-shipping">$0.00</span>
+                            </div>
+                            <hr>
+                            <div class="d-flex justify-content-between fw-bold">
+                                <span>Total:</span>
+                                <span id="cart-total" class="text-primary-custom">$0.00</span>
+                            </div>
+                        </div>
+                        <div class="d-flex gap-2">
+                            <button class="btn btn-outline-secondary" onclick="clearCart()">Clear Cart</button>
+                            <button class="btn btn-primary" onclick="proceedToCheckout()">Checkout</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <!-- Custom JS -->
+    <script src="js/app.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/forms.js"></script>
+    <script src="js/cart.js"></script>
+    
+    <!-- Size Calculator Script -->
+    <script>
+        document.getElementById('sizeCalculator').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const footLength = parseFloat(document.getElementById('footLength').value);
+            const gender = document.getElementById('gender').value;
+            
+            if (!footLength || footLength < 8 || footLength > 13) {
+                alert('Please enter a valid foot length between 8 and 13 inches.');
+                return;
+            }
+            
+            let recommendedSize = '';
+            let sizeDetails = '';
+            
+            if (gender === 'male') {
+                if (footLength >= 9.6 && footLength < 9.8) recommendedSize = 'US 6';
+                else if (footLength >= 9.8 && footLength < 10) recommendedSize = 'US 6.5';
+                else if (footLength >= 10 && footLength < 10.2) recommendedSize = 'US 7';
+                else if (footLength >= 10.2 && footLength < 10.4) recommendedSize = 'US 7.5';
+                else if (footLength >= 10.4 && footLength < 10.6) recommendedSize = 'US 8';
+                else if (footLength >= 10.6 && footLength < 10.8) recommendedSize = 'US 8.5';
+                else if (footLength >= 10.8 && footLength < 11) recommendedSize = 'US 9';
+                else if (footLength >= 11 && footLength < 11.2) recommendedSize = 'US 9.5';
+                else if (footLength >= 11.2 && footLength < 11.4) recommendedSize = 'US 10';
+                else if (footLength >= 11.4 && footLength < 11.6) recommendedSize = 'US 10.5';
+                else if (footLength >= 11.6 && footLength < 11.8) recommendedSize = 'US 11';
+                else if (footLength >= 11.8 && footLength < 12) recommendedSize = 'US 11.5';
+                else if (footLength >= 12) recommendedSize = 'US 12';
+                else recommendedSize = 'US 5.5';
+                
+                sizeDetails = `EU: ${getEUSize(footLength, 'male')} | UK: ${getUKSize(footLength, 'male')}`;
+            } else if (gender === 'female') {
+                if (footLength >= 8.9 && footLength < 9.1) recommendedSize = 'US 5';
+                else if (footLength >= 9.1 && footLength < 9.3) recommendedSize = 'US 5.5';
+                else if (footLength >= 9.3 && footLength < 9.4) recommendedSize = 'US 6';
+                else if (footLength >= 9.4 && footLength < 9.6) recommendedSize = 'US 6.5';
+                else if (footLength >= 9.6 && footLength < 9.8) recommendedSize = 'US 7';
+                else if (footLength >= 9.8 && footLength < 10) recommendedSize = 'US 7.5';
+                else if (footLength >= 10 && footLength < 10.2) recommendedSize = 'US 8';
+                else if (footLength >= 10.2 && footLength < 10.4) recommendedSize = 'US 8.5';
+                else if (footLength >= 10.4 && footLength < 10.6) recommendedSize = 'US 9';
+                else if (footLength >= 10.6 && footLength < 10.8) recommendedSize = 'US 9.5';
+                else if (footLength >= 10.8 && footLength < 11) recommendedSize = 'US 10';
+                else if (footLength >= 11 && footLength < 11.2) recommendedSize = 'US 10.5';
+                else if (footLength >= 11.2) recommendedSize = 'US 11';
+                else recommendedSize = 'US 4.5';
+                
+                sizeDetails = `EU: ${getEUSize(footLength, 'female')} | UK: ${getUKSize(footLength, 'female')}`;
+            } else {
+                // Kids sizing
+                if (footLength >= 4.9 && footLength < 5.1) recommendedSize = 'US 4 (Toddler)';
+                else if (footLength >= 5.1 && footLength < 5.3) recommendedSize = 'US 5 (Toddler)';
+                else if (footLength >= 5.3 && footLength < 5.5) recommendedSize = 'US 6 (Toddler)';
+                else if (footLength >= 5.5 && footLength < 5.7) recommendedSize = 'US 7 (Toddler)';
+                else if (footLength >= 5.7 && footLength < 5.9) recommendedSize = 'US 8 (Toddler)';
+                else if (footLength >= 5.9 && footLength < 6.1) recommendedSize = 'US 9 (Toddler)';
+                else if (footLength >= 6.1 && footLength < 6.3) recommendedSize = 'US 10 (Toddler)';
+                else if (footLength >= 6.3 && footLength < 6.5) recommendedSize = 'US 10.5 (Youth)';
+                else if (footLength >= 6.5 && footLength < 6.7) recommendedSize = 'US 11 (Youth)';
+                else if (footLength >= 6.7 && footLength < 6.9) recommendedSize = 'US 11.5 (Youth)';
+                else if (footLength >= 6.9 && footLength < 7.1) recommendedSize = 'US 12 (Youth)';
+                else if (footLength >= 7.1 && footLength < 7.3) recommendedSize = 'US 12.5 (Youth)';
+                else if (footLength >= 7.3 && footLength < 7.5) recommendedSize = 'US 13 (Youth)';
+                else if (footLength >= 7.5 && footLength < 7.7) recommendedSize = 'US 13.5 (Youth)';
+                else if (footLength >= 7.7 && footLength < 7.9) recommendedSize = 'US 1 (Youth)';
+                else if (footLength >= 7.9 && footLength < 8.1) recommendedSize = 'US 1.5 (Youth)';
+                else if (footLength >= 8.1) recommendedSize = 'US 2 (Youth)';
+                else recommendedSize = 'US 3 (Toddler)';
+                
+                sizeDetails = `EU: ${getEUSize(footLength, 'kids')}`;
+            }
+            
+            document.getElementById('recommendedSize').textContent = recommendedSize;
+            document.getElementById('sizeDetails').textContent = sizeDetails;
+            document.getElementById('sizeResult').style.display = 'block';
+        });
+        
+        function getEUSize(footLength, gender) {
+            // Simplified EU size calculation
+            if (gender === 'male') {
+                return Math.round(39 + (footLength - 9.6) * 2);
+            } else if (gender === 'female') {
+                return Math.round(36 + (footLength - 8.9) * 2);
+            } else {
+                return Math.round(20 + (footLength - 4.9) * 2);
+            }
+        }
+        
+        function getUKSize(footLength, gender) {
+            // Simplified UK size calculation
+            if (gender === 'male') {
+                return Math.round(5.5 + (footLength - 9.6) * 2);
+            } else {
+                return Math.round(3 + (footLength - 8.9) * 2);
+            }
+        }
+    </script>
+</body>
+</html>
+

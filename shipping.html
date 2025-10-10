@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shipping Information - SneakHub</title>
+    <meta name="description" content="Learn about SneakHub's shipping options, rates, delivery times, and international shipping policies.">
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Boxicons -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-shoe-prints me-2"></i>SneakHub
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Products
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="male.html">Men's Shoes</a></li>
+                            <li><a class="dropdown-item" href="women.html">Women's Shoes</a></li>
+                            <li><a class="dropdown-item" href="kids.html">Kids' Shoes</a></li>
+                            <li><a class="dropdown-item" href="sport.html">Sports Shoes</a></li>
+                            <li><a class="dropdown-item" href="trend.html">Trending</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="team.html">Team</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="service.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                
+                <!-- Search Bar -->
+                <div class="d-flex align-items-center me-3">
+                    <div class="position-relative">
+                        <input type="text" class="form-control" placeholder="Search products..." id="search-input">
+                        <div id="search-results" class="position-absolute bg-white border rounded shadow-lg" style="top: 100%; left: 0; right: 0; z-index: 1000; display: none; max-height: 300px; overflow-y: auto;"></div>
+                    </div>
+                </div>
+                
+                <!-- Cart -->
+                <div class="d-flex align-items-center">
+                    <button class="btn btn-outline-light position-relative" id="cart-modal-trigger">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-badge" id="cart-count" style="display: none;">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header bg-gradient-custom text-white py-5" style="margin-top: 76px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="display-4 fw-bold mb-3">Shipping Information</h1>
+                    <p class="lead">Fast, reliable shipping options to get your sneakers delivered quickly and safely</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shipping Options -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <!-- Domestic Shipping -->
+                    <div class="mb-5">
+                        <h2 class="h3 text-primary-custom mb-4">
+                            <i class="fas fa-truck me-2"></i>Domestic Shipping (United States)
+                        </h2>
+                        <div class="row">
+                            <div class="col-md-4 mb-4">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="card-body text-center">
+                                        <div class="bg-primary-custom text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                                            <i class="fas fa-shipping-fast fa-lg"></i>
+                                        </div>
+                                        <h5 class="card-title">Standard Shipping</h5>
+                                        <p class="text-muted mb-3">3-5 business days</p>
+                                        <div class="mb-3">
+                                            <span class="h4 text-primary-custom">$9.99</span>
+                                        </div>
+                                        <ul class="list-unstyled small text-muted">
+                                            <li>• Tracking included</li>
+                                            <li>• Insurance included</li>
+                                            <li>• Signature required</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="card h-100 border-0 shadow-sm border-primary">
+                                    <div class="card-body text-center">
+                                        <div class="bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                                            <i class="fas fa-rocket fa-lg"></i>
+                                        </div>
+                                        <h5 class="card-title">Express Shipping</h5>
+                                        <p class="text-muted mb-3">1-2 business days</p>
+                                        <div class="mb-3">
+                                            <span class="h4 text-success">$19.99</span>
+                                        </div>
+                                        <ul class="list-unstyled small text-muted">
+                                            <li>• Priority handling</li>
+                                            <li>• Real-time tracking</li>
+                                            <li>• Guaranteed delivery</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="card-body text-center">
+                                        <div class="bg-warning text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                                            <i class="fas fa-gift fa-lg"></i>
+                                        </div>
+                                        <h5 class="card-title">Free Shipping</h5>
+                                        <p class="text-muted mb-3">Orders over $100</p>
+                                        <div class="mb-3">
+                                            <span class="h4 text-warning">FREE</span>
+                                        </div>
+                                        <ul class="list-unstyled small text-muted">
+                                            <li>• Standard delivery</li>
+                                            <li>• Tracking included</li>
+                                            <li>• No minimum order</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- International Shipping -->
+                    <div class="mb-5">
+                        <h2 class="h3 text-primary-custom mb-4">
+                            <i class="fas fa-globe me-2"></i>International Shipping
+                        </h2>
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <p class="lead mb-4">We ship to over 50 countries worldwide! International shipping rates and delivery times vary by destination.</p>
+                                
+                                <div class="table-responsive">
+                                    <table class="table table-striped">
+                                        <thead class="table-dark">
+                                            <tr>
+                                                <th>Region</th>
+                                                <th>Delivery Time</th>
+                                                <th>Starting From</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Canada</td>
+                                                <td>5-7 business days</td>
+                                                <td>$24.99</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Europe</td>
+                                                <td>7-10 business days</td>
+                                                <td>$29.99</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Asia Pacific</td>
+                                                <td>10-14 business days</td>
+                                                <td>$34.99</td>
+                                            </tr>
+                                            <tr>
+                                                <td>South America</td>
+                                                <td>8-12 business days</td>
+                                                <td>$32.99</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Other Regions</td>
+                                                <td>10-15 business days</td>
+                                                <td>$39.99</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="card bg-light">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Important Notes</h5>
+                                        <ul class="list-unstyled small">
+                                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Customs duties may apply</li>
+                                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Delivery times are estimates</li>
+                                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Tracking provided for all orders</li>
+                                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Insurance included</li>
+                                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Signature required</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Processing Times -->
+                    <div class="mb-5">
+                        <h2 class="h3 text-primary-custom mb-4">
+                            <i class="fas fa-clock me-2"></i>Processing Times
+                        </h2>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="card border-0 shadow-sm">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Regular Orders</h5>
+                                        <p class="text-muted">Most orders are processed and shipped within 1-2 business days.</p>
+                                        <ul class="list-unstyled">
+                                            <li><i class="fas fa-check text-success me-2"></i>In-stock items: 1-2 days</li>
+                                            <li><i class="fas fa-check text-success me-2"></i>Custom orders: 3-5 days</li>
+                                            <li><i class="fas fa-check text-success me-2"></i>Pre-orders: As specified</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card border-0 shadow-sm">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Holiday Periods</h5>
+                                        <p class="text-muted">During peak seasons, processing may take longer.</p>
+                                        <ul class="list-unstyled">
+                                            <li><i class="fas fa-exclamation-triangle text-warning me-2"></i>Black Friday: 3-5 days</li>
+                                            <li><i class="fas fa-exclamation-triangle text-warning me-2"></i>Christmas: 5-7 days</li>
+                                            <li><i class="fas fa-exclamation-triangle text-warning me-2"></i>New Year: 3-5 days</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tracking Information -->
+                    <div class="mb-5">
+                        <h2 class="h3 text-primary-custom mb-4">
+                            <i class="fas fa-search me-2"></i>Tracking Your Order
+                        </h2>
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <p class="lead mb-4">Stay updated on your order's journey from our warehouse to your doorstep.</p>
+                                
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <div class="d-flex align-items-start">
+                                            <div class="bg-primary-custom text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px; min-width: 40px;">
+                                                <i class="fas fa-envelope"></i>
+                                            </div>
+                                            <div>
+                                                <h6>Email Notification</h6>
+                                                <p class="text-muted small mb-0">You'll receive tracking information via email once your order ships.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <div class="d-flex align-items-start">
+                                            <div class="bg-primary-custom text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px; min-width: 40px;">
+                                                <i class="fas fa-mobile-alt"></i>
+                                            </div>
+                                            <div>
+                                                <h6>Text Updates</h6>
+                                                <p class="text-muted small mb-0">Opt-in for SMS updates on your order status.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <div class="d-flex align-items-start">
+                                            <div class="bg-primary-custom text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px; min-width: 40px;">
+                                                <i class="fas fa-user"></i>
+                                            </div>
+                                            <div>
+                                                <h6>Account Dashboard</h6>
+                                                <p class="text-muted small mb-0">Track all your orders in your account dashboard.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <div class="d-flex align-items-start">
+                                            <div class="bg-primary-custom text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px; min-width: 40px;">
+                                                <i class="fas fa-phone"></i>
+                                            </div>
+                                            <div>
+                                                <h6>Customer Service</h6>
+                                                <p class="text-muted small mb-0">Call us for immediate assistance with tracking.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="card bg-primary-custom text-white">
+                                    <div class="card-body text-center">
+                                        <i class="fas fa-truck fa-3x mb-3"></i>
+                                        <h5>Track Your Order</h5>
+                                        <p class="mb-3">Enter your tracking number to get real-time updates</p>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="Tracking number">
+                                            <button class="btn btn-light" type="button">Track</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Shipping Restrictions -->
+                    <div class="mb-5">
+                        <h2 class="h3 text-primary-custom mb-4">
+                            <i class="fas fa-exclamation-triangle me-2"></i>Shipping Restrictions
+                        </h2>
+                        <div class="alert alert-warning">
+                            <h5 class="alert-heading">Important Information</h5>
+                            <p class="mb-2">Please note the following restrictions:</p>
+                            <ul class="mb-0">
+                                <li>We cannot ship to P.O. Boxes for international orders</li>
+                                <li>Some countries have restrictions on certain materials</li>
+                                <li>Customs duties and taxes are the responsibility of the recipient</li>
+                                <li>We are not responsible for delays caused by customs</li>
+                                <li>Some remote areas may have limited delivery options</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div class="text-center">
+                        <h3 class="mb-3">Need Help with Shipping?</h3>
+                        <p class="lead mb-4">Our customer service team is here to assist you with any shipping questions or concerns.</p>
+                        <div class="d-flex gap-3 justify-content-center flex-wrap">
+                            <a href="contact.html" class="btn btn-primary btn-lg">Contact Us</a>
+                            <a href="tel:+1-555-SNEAKER" class="btn btn-outline-primary btn-lg">
+                                <i class="fas fa-phone me-2"></i>Call Us
+                            </a>
+                            <a href="mailto:shipping@sneakhub.com" class="btn btn-outline-primary btn-lg">
+                                <i class="fas fa-envelope me-2"></i>Email Us
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5><i class="fas fa-shoe-prints me-2"></i>SneakHub</h5>
+                    <p class="text-muted">Your premier destination for premium sneakers and customization services. Quality, style, and comfort in every step.</p>
+                    <div class="social-links">
+                        <a href="https://facebook.com/sneakhub"><i class="fab fa-facebook"></i></a>
+                        <a href="https://twitter.com/sneakhub"><i class="fab fa-twitter"></i></a>
+                        <a href="https://instagram.com/sneakhub"><i class="fab fa-instagram"></i></a>
+                        <a href="https://youtube.com/sneakhub"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Products</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="male.html">Men's Shoes</a></li>
+                        <li><a href="women.html">Women's Shoes</a></li>
+                        <li><a href="kids.html">Kids' Shoes</a></li>
+                        <li><a href="sport.html">Sports Shoes</a></li>
+                        <li><a href="trend.html">Trending</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Services</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="service.html">Customization</a></li>
+                        <li><a href="size-guide.html">Size Guide</a></li>
+                        <li><a href="service.html">Shoe Care</a></li>
+                        <li><a href="service.html">Repairs</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Company</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="team.html">Our Team</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="sale.html">Sale</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Support</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="shipping.html">Shipping</a></li>
+                        <li><a href="returns.html">Returns</a></li>
+                        <li><a href="size-guide.html">Size Guide</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <hr class="my-4">
+            
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0 text-muted">&copy; 2025 SneakHub. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="privacy.html" class="text-muted me-3">Privacy Policy</a>
+                    <a href="terms.html" class="text-muted">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div class="modal fade" id="cartModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">
+                        <i class="fas fa-shopping-cart me-2"></i>Shopping Cart
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="cart-items">
+                        <!-- Cart items will be populated here -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="d-flex justify-content-between w-100">
+                        <div>
+                            <div class="d-flex justify-content-between">
+                                <span>Subtotal:</span>
+                                <span id="cart-subtotal">$0.00</span>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <span>Tax:</span>
+                                <span id="cart-tax">$0.00</span>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <span>Shipping:</span>
+                                <span id="cart-shipping">$0.00</span>
+                            </div>
+                            <hr>
+                            <div class="d-flex justify-content-between fw-bold">
+                                <span>Total:</span>
+                                <span id="cart-total" class="text-primary-custom">$0.00</span>
+                            </div>
+                        </div>
+                        <div class="d-flex gap-2">
+                            <button class="btn btn-outline-secondary" onclick="clearCart()">Clear Cart</button>
+                            <button class="btn btn-primary" onclick="proceedToCheckout()">Checkout</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <!-- Custom JS -->
+    <script src="js/app.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/forms.js"></script>
+    <script src="js/cart.js"></script>
+</body>
+</html>
+

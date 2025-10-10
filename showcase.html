@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Showcase - SneakHub</title>
+    <meta name="description" content="Experience our premium sneaker collection through stunning video showcases. Watch our latest collections, custom designs, and behind-the-scenes content.">
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Boxicons -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-shoe-prints me-2"></i>SneakHub
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Products
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="male.html">Men's Shoes</a></li>
+                            <li><a class="dropdown-item" href="women.html">Women's Shoes</a></li>
+                            <li><a class="dropdown-item" href="kids.html">Kids' Shoes</a></li>
+                            <li><a class="dropdown-item" href="sport.html">Sports Shoes</a></li>
+                            <li><a class="dropdown-item" href="trend.html">Trending</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="team.html">Team</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="service.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                
+                <!-- Search Bar -->
+                <div class="d-flex align-items-center me-3">
+                    <div class="position-relative">
+                        <input type="text" class="form-control" placeholder="Search products..." id="search-input">
+                        <div id="search-results" class="position-absolute bg-white border rounded shadow-lg" style="top: 100%; left: 0; right: 0; z-index: 1000; display: none; max-height: 300px; overflow-y: auto;"></div>
+                    </div>
+                </div>
+                
+                <!-- Cart -->
+                <div class="d-flex align-items-center">
+                    <button class="btn btn-outline-light position-relative" id="cart-modal-trigger">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-badge" id="cart-count" style="display: none;">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 mx-auto text-center">
+                    <div class="hero-content">
+                        <h1 class="hero-title">Video Showcase</h1>
+                        <p class="hero-subtitle">Experience our premium sneaker collection through stunning visuals and immersive content</p>
+                        <div class="d-flex gap-3 flex-wrap justify-content-center">
+                            <a href="#featured-videos" class="btn btn-primary btn-lg">Watch Now</a>
+                            <a href="trend.html" class="btn btn-secondary btn-lg">Shop Collection</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Videos Section -->
+    <section id="featured-videos" class="py-5 bg-dark text-white">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold text-primary-custom">Featured Videos</h2>
+                <p class="lead">Discover our latest collections and behind-the-scenes content</p>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Main Featured Video -->
+                <div class="col-lg-8">
+                    <div class="featured-video-card">
+                        <div class="video-container-large">
+                            <video class="showcase-video-large" controls preload="metadata" poster="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=800&h=450&q=80&fit=crop">
+                                <source src="vid.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="video-overlay-large">
+                                <button class="play-btn-large" onclick="playVideoLarge(this)">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                                <div class="video-info-overlay">
+                                    <h3 class="video-title-large">Premium Collection Showcase</h3>
+                                    <p class="video-description-large">Experience our latest premium sneaker collection in stunning detail</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Side Videos -->
+                <div class="col-lg-4">
+                    <div class="row g-3">
+                        <!-- Video 2 -->
+                        <div class="col-12">
+                            <div class="video-showcase-card">
+                                <div class="video-container">
+                                    <video class="showcase-video" controls preload="metadata" poster="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=400&h=300&q=80&fit=crop">
+                                        <source src="vid1.mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                    <div class="video-overlay">
+                                        <button class="play-btn" onclick="playVideo(this)">
+                                            <i class="fas fa-play"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="video-info">
+                                    <h5 class="video-title">Custom Designs</h5>
+                                    <p class="video-description">Watch our expert artists create unique custom designs</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Video 3 -->
+                        <div class="col-12">
+                            <div class="video-showcase-card">
+                                <div class="video-container">
+                                    <video class="showcase-video" controls preload="metadata" poster="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=400&h=300&q=80&fit=crop">
+                                        <source src="vid2.mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                    <div class="video-overlay">
+                                        <button class="play-btn" onclick="playVideo(this)">
+                                            <i class="fas fa-play"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="video-info">
+                                    <h5 class="video-title">Behind the Scenes</h5>
+                                    <p class="video-description">Get an exclusive look at our process</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Gallery Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold text-primary-custom">Video Gallery</h2>
+                <p class="lead">Explore our complete video collection</p>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Video 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="video-gallery-card">
+                        <div class="video-container">
+                            <video class="showcase-video" controls preload="metadata" poster="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=400&h=300&q=80&fit=crop">
+                                <source src="vid.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="video-overlay">
+                                <button class="play-btn" onclick="playVideo(this)">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="video-info">
+                            <h5 class="video-title">Premium Collection</h5>
+                            <p class="video-description">Discover our latest premium sneaker collection featuring the most sought-after designs.</p>
+                            <div class="video-meta">
+                                <span class="video-duration"><i class="fas fa-clock"></i> 2:30</span>
+                                <span class="video-views"><i class="fas fa-eye"></i> 1.2K</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Video 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="video-gallery-card">
+                        <div class="video-container">
+                            <video class="showcase-video" controls preload="metadata" poster="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=400&h=300&q=80&fit=crop">
+                                <source src="vid1.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="video-overlay">
+                                <button class="play-btn" onclick="playVideo(this)">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="video-info">
+                            <h5 class="video-title">Custom Designs</h5>
+                            <p class="video-description">Watch our expert artists create unique custom designs that make your sneakers one-of-a-kind.</p>
+                            <div class="video-meta">
+                                <span class="video-duration"><i class="fas fa-clock"></i> 3:15</span>
+                                <span class="video-views"><i class="fas fa-eye"></i> 856</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Video 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="video-gallery-card">
+                        <div class="video-container">
+                            <video class="showcase-video" controls preload="metadata" poster="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=400&h=300&q=80&fit=crop">
+                                <source src="vid2.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="video-overlay">
+                                <button class="play-btn" onclick="playVideo(this)">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="video-info">
+                            <h5 class="video-title">Behind the Scenes</h5>
+                            <p class="video-description">Get an exclusive look at our process and the passion behind every pair of sneakers.</p>
+                            <div class="video-meta">
+                                <span class="video-duration"><i class="fas fa-clock"></i> 4:20</span>
+                                <span class="video-views"><i class="fas fa-eye"></i> 2.1K</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="py-5 bg-gradient-custom text-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h3 class="fw-bold mb-3">Ready to Experience Our Collection?</h3>
+                    <p class="mb-0">Browse our complete catalog and find the perfect pair of sneakers that matches your style.</p>
+                </div>
+                <div class="col-lg-4 text-lg-end">
+                    <a href="trend.html" class="btn btn-light btn-lg me-3">Shop Now</a>
+                    <a href="contact.html" class="btn btn-outline-light btn-lg">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5><i class="fas fa-shoe-prints me-2"></i>SneakHub</h5>
+                    <p class="text-muted">Your premier destination for premium sneakers and customization services. Quality, style, and comfort in every step.</p>
+                    <div class="social-links">
+                        <a href="https://facebook.com/sneakhub"><i class="fab fa-facebook"></i></a>
+                        <a href="https://twitter.com/sneakhub"><i class="fab fa-twitter"></i></a>
+                        <a href="https://instagram.com/sneakhub"><i class="fab fa-instagram"></i></a>
+                        <a href="https://youtube.com/sneakhub"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Products</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="male.html">Men's Shoes</a></li>
+                        <li><a href="women.html">Women's Shoes</a></li>
+                        <li><a href="kids.html">Kids' Shoes</a></li>
+                        <li><a href="sport.html">Sports Shoes</a></li>
+                        <li><a href="trend.html">Trending</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Services</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="service.html">Customization</a></li>
+                        <li><a href="service.html">Size Guide</a></li>
+                        <li><a href="service.html">Shoe Care</a></li>
+                        <li><a href="service.html">Repairs</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Company</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="team.html">Our Team</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="sale.html">Sale</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Support</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="shipping.html">Shipping</a></li>
+                        <li><a href="returns.html">Returns</a></li>
+                        <li><a href="size-guide.html">Size Guide</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <hr class="my-4">
+            
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0 text-muted">&copy; 2025 SneakHub. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="privacy.html" class="text-muted me-3">Privacy Policy</a>
+                    <a href="terms.html" class="text-muted">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <!-- Custom JS -->
+    <script src="js/cart.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/forms.js"></script>
+    <script src="js/slider.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
