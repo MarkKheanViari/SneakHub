@@ -3,46 +3,450 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SneakHub Services</title>
-    <script src="https://kit.fontawesome.com/208bc1bf36.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="CSS/service.css">
+    <title>Services - SneakHub</title>
+    <meta name="description" content="Discover SneakHub's premium services including customization, size guides, shoe care, and repairs. Professional services for your sneaker needs.">
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Boxicons -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-    <!-- Back Button -->
-    <a href="index.html" class="back-button"><i class="fas fa-arrow-left"></i></a>
-
-    <!-- Service Section -->
-    <div class="service">
-        <h1>SneakHub Services</h1>
-        <p>"Style, Confidence: SneakHub, Where Fashion Meets Comfort!"</p>
-        
-        <div class="service1">
-            <div class="service2">
-                <i class="fa-regular fa-handshake"></i>
-                <h2>Customization</h2>
-                <p>Personalize shoes with colors, materials, and designs.</p>
-            </div>
-
-            <div class="service2">
-                <i class="fa-solid fa-ruler-vertical"></i>
-                <h2>Size Guide</h2>
-                <p>Find the perfect size with our recommendation tool.</p>
-            </div>
-
-            <div class="service2">
-                <i class="fa-solid fa-pen-ruler"></i>
-                <h2>Shoe Care</h2>
-                <p>Expert care tips and products for your sneakers.</p>
-            </div>
-
-            <div class="service2">
-                <i class="fa-solid fa-shoe-prints"></i>
-                <h2>Repairs</h2>
-                <p>Partnered with local shops for professional shoe repair.</p>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-shoe-prints me-2"></i>SneakHub
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Products
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="male.html">Men's Shoes</a></li>
+                            <li><a class="dropdown-item" href="women.html">Women's Shoes</a></li>
+                            <li><a class="dropdown-item" href="kids.html">Kids' Shoes</a></li>
+                            <li><a class="dropdown-item" href="sport.html">Sports Shoes</a></li>
+                            <li><a class="dropdown-item" href="trend.html">Trending</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="service.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                
+                <!-- Search Bar -->
+                <div class="d-flex align-items-center me-3">
+                    <div class="position-relative">
+                        <input type="text" class="form-control" placeholder="Search products..." id="search-input">
+                        <div id="search-results" class="position-absolute bg-white border rounded shadow-lg" style="top: 100%; left: 0; right: 0; z-index: 1000; display: none; max-height: 300px; overflow-y: auto;"></div>
+                    </div>
+                </div>
+                
+                <!-- Cart -->
+                <div class="d-flex align-items-center">
+                    <button class="btn btn-outline-light position-relative" id="cart-modal-trigger">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-badge" id="cart-count" style="display: none;">0</span>
+                    </button>
+                </div>
             </div>
         </div>
-    </div>
+    </nav>
 
+    <!-- Page Header -->
+    <section class="py-5 mt-5 bg-gradient-custom text-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h1 class="display-4 fw-bold mb-3">Our Services</h1>
+                    <p class="lead mb-0">Professional sneaker services to keep your kicks looking fresh and performing at their best.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Customization Service -->
+                <div class="col-lg-6">
+                    <div class="card h-100 border-0 shadow-lg">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="https://via.placeholder.com/300x200/FF9B00/FFFFFF?text=Customization" class="img-fluid rounded-start h-100" alt="Customization Service" style="object-fit: cover;">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body p-4">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <i class="fas fa-paint-brush fa-2x text-primary-custom me-3"></i>
+                                        <h4 class="card-title mb-0">Customization</h4>
+                                    </div>
+                                    <p class="card-text">Transform your sneakers into unique masterpieces with our professional customization services. From color changes to complete redesigns, our expert team brings your vision to life.</p>
+                                    <ul class="list-unstyled">
+                                        <li><i class="fas fa-check text-primary-custom me-2"></i>Color customization</li>
+                                        <li><i class="fas fa-check text-primary-custom me-2"></i>Logo and text application</li>
+                                        <li><i class="fas fa-check text-primary-custom me-2"></i>Material upgrades</li>
+                                        <li><i class="fas fa-check text-primary-custom me-2"></i>Complete redesigns</li>
+                                    </ul>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="h5 text-primary-custom mb-0">Starting at $50</span>
+                                        <button class="btn btn-primary">Learn More</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Size Guide Service -->
+                <div class="col-lg-6">
+                    <div class="card h-100 border-0 shadow-lg">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="https://via.placeholder.com/300x200/FFE100/000000?text=Size+Guide" class="img-fluid rounded-start h-100" alt="Size Guide Service" style="object-fit: cover;">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body p-4">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <i class="fas fa-ruler fa-2x text-primary-custom me-3"></i>
+                                        <h4 class="card-title mb-0">Size Guide</h4>
+                                    </div>
+                                    <p class="card-text">Find the perfect fit with our comprehensive size guide service. Our experts help you determine the right size for any brand and style.</p>
+                                    <ul class="list-unstyled">
+                                        <li><i class="fas fa-check text-primary-custom me-2"></i>Brand-specific sizing</li>
+                                        <li><i class="fas fa-check text-primary-custom me-2"></i>Fit recommendations</li>
+                                        <li><i class="fas fa-check text-primary-custom me-2"></i>Size conversion charts</li>
+                                        <li><i class="fas fa-check text-primary-custom me-2"></i>Personal consultation</li>
+                                    </ul>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="h5 text-primary-custom mb-0">Free Service</span>
+                                        <button class="btn btn-primary">Get Started</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Shoe Care Service -->
+                <div class="col-lg-6">
+                    <div class="card h-100 border-0 shadow-lg">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="https://via.placeholder.com/300x200/FFC900/000000?text=Shoe+Care" class="img-fluid rounded-start h-100" alt="Shoe Care Service" style="object-fit: cover;">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body p-4">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <i class="fas fa-spray-can fa-2x text-primary-custom me-3"></i>
+                                        <h4 class="card-title mb-0">Shoe Care</h4>
+                                    </div>
+                                    <p class="card-text">Keep your sneakers looking brand new with our professional cleaning and maintenance services. We use premium products and techniques.</p>
+                                    <ul class="list-unstyled">
+                                        <li><i class="fas fa-check text-primary-custom me-2"></i>Deep cleaning</li>
+                                        <li><i class="fas fa-check text-primary-custom me-2"></i>Stain removal</li>
+                                        <li><i class="fas fa-check text-primary-custom me-2"></i>Deodorizing</li>
+                                        <li><i class="fas fa-check text-primary-custom me-2"></i>Protective treatment</li>
+                                    </ul>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="h5 text-primary-custom mb-0">Starting at $25</span>
+                                        <button class="btn btn-primary">Book Now</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Repairs Service -->
+                <div class="col-lg-6">
+                    <div class="card h-100 border-0 shadow-lg">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="https://via.placeholder.com/300x200/EBE389/000000?text=Repairs" class="img-fluid rounded-start h-100" alt="Repairs Service" style="object-fit: cover;">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body p-4">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <i class="fas fa-tools fa-2x text-primary-custom me-3"></i>
+                                        <h4 class="card-title mb-0">Repairs</h4>
+                                    </div>
+                                    <p class="card-text">Restore your favorite sneakers to their former glory with our expert repair services. From sole replacement to upper restoration.</p>
+                                    <ul class="list-unstyled">
+                                        <li><i class="fas fa-check text-primary-custom me-2"></i>Sole replacement</li>
+                                        <li><i class="fas fa-check text-primary-custom me-2"></i>Upper repairs</li>
+                                        <li><i class="fas fa-check text-primary-custom me-2"></i>Lace replacement</li>
+                                        <li><i class="fas fa-check text-primary-custom me-2"></i>Structural fixes</li>
+                                    </ul>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="h5 text-primary-custom mb-0">Starting at $40</span>
+                                        <button class="btn btn-primary">Get Quote</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-6 fw-bold text-primary-custom">How It Works</h2>
+                <p class="lead">Simple steps to get your sneakers serviced</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="text-center">
+                        <div class="bg-primary-custom text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px;">
+                            <span class="h3 mb-0">1</span>
+                        </div>
+                        <h5>Choose Service</h5>
+                        <p class="text-muted">Select the service you need from our range of professional sneaker services.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="text-center">
+                        <div class="bg-primary-custom text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px;">
+                            <span class="h3 mb-0">2</span>
+                        </div>
+                        <h5>Book Appointment</h5>
+                        <p class="text-muted">Schedule a convenient time for drop-off or consultation with our experts.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="text-center">
+                        <div class="bg-primary-custom text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px;">
+                            <span class="h3 mb-0">3</span>
+                        </div>
+                        <h5>Expert Service</h5>
+                        <p class="text-muted">Our skilled professionals work on your sneakers with care and precision.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="text-center">
+                        <div class="bg-primary-custom text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px;">
+                            <span class="h3 mb-0">4</span>
+                        </div>
+                        <h5>Pick Up</h5>
+                        <p class="text-muted">Collect your refreshed sneakers and enjoy the quality results.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-6 fw-bold text-primary-custom">Frequently Asked Questions</h2>
+                <p class="lead">Everything you need to know about our services</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="faq1">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1">
+                                    How long does customization take?
+                                </button>
+                            </h2>
+                            <div id="collapse1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Customization typically takes 3-7 business days depending on the complexity of the work. Simple color changes can be completed in 2-3 days, while complete redesigns may take up to a week.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="faq2">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2">
+                                    Do you offer warranty on repairs?
+                                </button>
+                            </h2>
+                            <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Yes, we offer a 90-day warranty on all repair work. If any issues arise with our repairs within this period, we'll fix them free of charge.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="faq3">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3">
+                                    Can you work on any brand of sneakers?
+                                </button>
+                            </h2>
+                            <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    We work with all major sneaker brands including Nike, Adidas, Jordan, Converse, Vans, and many others. Our experts are trained to handle various materials and construction methods.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="faq4">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4">
+                                    What if I'm not satisfied with the service?
+                                </button>
+                            </h2>
+                            <div id="collapse4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    We stand behind our work with a 100% satisfaction guarantee. If you're not completely satisfied, we'll work with you to make it right or provide a full refund.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-5 bg-gradient-custom text-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h3 class="fw-bold mb-3">Ready to Give Your Sneakers the Care They Deserve?</h3>
+                    <p class="lead mb-0">Book a service today and experience the SneakHub difference.</p>
+                </div>
+                <div class="col-lg-4 text-lg-end">
+                    <a href="contact.html" class="btn btn-light btn-lg me-2">Book Service</a>
+                    <a href="contact.html" class="btn btn-outline-light btn-lg">Get Quote</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5><i class="fas fa-shoe-prints me-2"></i>SneakHub</h5>
+                    <p class="text-muted">Your premier destination for premium sneakers and customization services. Quality, style, and comfort in every step.</p>
+                    <div class="social-links">
+                        <a href="https://facebook.com/sneakhub"><i class="fab fa-facebook"></i></a>
+                        <a href="https://twitter.com/sneakhub"><i class="fab fa-twitter"></i></a>
+                        <a href="https://instagram.com/sneakhub"><i class="fab fa-instagram"></i></a>
+                        <a href="https://youtube.com/sneakhub"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Products</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="male.html">Men's Shoes</a></li>
+                        <li><a href="women.html">Women's Shoes</a></li>
+                        <li><a href="kids.html">Kids' Shoes</a></li>
+                        <li><a href="sport.html">Sports Shoes</a></li>
+                        <li><a href="trend.html">Trending</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Services</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="service.html">Customization</a></li>
+                        <li><a href="service.html">Size Guide</a></li>
+                        <li><a href="service.html">Shoe Care</a></li>
+                        <li><a href="service.html">Repairs</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Company</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="sale.html">Sale</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Support</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="shipping.html">Shipping</a></li>
+                        <li><a href="returns.html">Returns</a></li>
+                        <li><a href="size-guide.html">Size Guide</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <hr class="my-4">
+            
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0 text-muted">&copy; 2025 SneakHub. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="privacy.html" class="text-muted me-3">Privacy Policy</a>
+                    <a href="terms.html" class="text-muted">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <!-- Custom JS -->
+    <script src="js/app.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/forms.js"></script>
+    <script src="js/slider.js"></script>
+    <script src="js/cart.js"></script>
 </body>
 </html>

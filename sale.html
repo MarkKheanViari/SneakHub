@@ -4,88 +4,601 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sale - SneakHub</title>
+    <meta name="description" content="Don't miss out on our amazing sneaker sales! Get up to 50% off on selected items. Limited time offers on premium sneakers.">
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Boxicons -->
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-    <link rel="stylesheet" href="CSS/sale.css">
+    
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-    <!-- Header -->
-    <header class="header">
-        <a href="#" class="logo">SneakHub Sale</a>
-
-        <nav class="navbar">
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="service.html">Services</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-
-        <div class="icons">
-            <a href="male.html"><i class='bx bx-male-sign'></i></a>
-            <a href="women.html"><i class='bx bx-female-sign'></i></a>
-            <a href="kids.html"><i class='bx bx-child'></i></a>
-            <a href="sport.html"><i class='bx bx-basketball'></i></a>
-            <a href="trend.html"><i class='bx bx-trending-up'></i></a>
-        </div>
-    </header>
-
-    <!-- Sale Banners Section -->
-    <section class="banner-container">
-
-        <div class="banner">
-            <img src="MEN/men7.png" alt="">
-            <div class="content">
-                <span>Nike Dunk “Low Coast”</span>
-                <h3>Up to 40% Off</h3>
-                <button class="btn">Shop Now <i class="fas fa-arrow-right"></i></button>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-shoe-prints me-2"></i>SneakHub
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Products
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="male.html">Men's Shoes</a></li>
+                            <li><a class="dropdown-item" href="women.html">Women's Shoes</a></li>
+                            <li><a class="dropdown-item" href="kids.html">Kids' Shoes</a></li>
+                            <li><a class="dropdown-item" href="sport.html">Sports Shoes</a></li>
+                            <li><a class="dropdown-item" href="trend.html">Trending</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="service.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                
+                <!-- Search Bar -->
+                <div class="d-flex align-items-center me-3">
+                    <div class="position-relative">
+                        <input type="text" class="form-control" placeholder="Search products..." id="search-input">
+                        <div id="search-results" class="position-absolute bg-white border rounded shadow-lg" style="top: 100%; left: 0; right: 0; z-index: 1000; display: none; max-height: 300px; overflow-y: auto;"></div>
+                    </div>
+                </div>
+                
+                <!-- Cart -->
+                <div class="d-flex align-items-center">
+                    <button class="btn btn-outline-light position-relative" id="cart-modal-trigger">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-badge" id="cart-count" style="display: none;">0</span>
+                    </button>
+                </div>
             </div>
         </div>
+    </nav>
 
-        <div class="banner">
-            <img src="WOMEN/Women1.png" alt="">
-            <div class="content">
-                <span>Reebok Club C</span>
-                <h3>Up to 40% Off</h3>
-                <button class="btn">Shop Now <i class="fas fa-arrow-right"></i></button>
-            </div>
-        </div>
-
-        <div class="banner">
-            <img src="MEN/men7.png" alt="">
-            <div class="content">
-                <span>Nike Dunk “Low Coast”</span>
-                <h3>Up to 40% Off</h3>
-                <button class="btn">Shop Now <i class="fas fa-arrow-right"></i></button>
-            </div>
-        </div>
-
-        <div class="banner">
-            <img src="WOMEN/Women1.png" alt="">
-            <div class="content">
-                <span>Reebok Club C</span>
-                <h3>Up to 40% Off</h3>
-                <button class="btn">Shop Now <i class="fas fa-arrow-right"></i></button>
-            </div>
-        </div><div class="banner">
-            <img src="MEN/men7.png" alt="">
-            <div class="content">
-                <span>Nike Dunk “Low Coast”</span>
-                <h3>Up to 40% Off</h3>
-                <button class="btn">Shop Now <i class="fas fa-arrow-right"></i></button>
-            </div>
-        </div>
-
-        <div class="banner">
-            <img src="WOMEN/Women1.png" alt="">
-            <div class="content">
-                <span>Reebok Club C</span>
-                <h3>Up to 40% Off</h3>
-                <button class="btn">Shop Now <i class="fas fa-arrow-right"></i></button>
+    <!-- Sale Banner -->
+    <section class="py-4 bg-danger text-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <h4 class="mb-2"><i class="fas fa-fire me-2"></i>FLASH SALE - Up to 50% OFF!</h4>
+                    <p class="mb-0">Limited time offer on selected sneakers. Don't miss out!</p>
+                </div>
+                <div class="col-md-4 text-md-end">
+                    <div class="d-flex align-items-center justify-content-md-end">
+                        <span class="badge bg-warning text-dark fs-6 me-2">Ends Soon</span>
+                        <div id="countdown" class="text-warning fw-bold"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- Page Header -->
+    <section class="py-5 mt-5 bg-gradient-custom text-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h1 class="display-4 fw-bold mb-3">Sale Items</h1>
+                    <p class="lead mb-0">Amazing deals on premium sneakers. Limited time offers you won't want to miss!</p>
+                </div>
+                <div class="col-lg-4 text-lg-end">
+                    <div class="d-flex gap-2 justify-content-lg-end">
+                        <select class="form-select" style="width: auto;">
+                            <option>Sort by</option>
+                            <option>Price: Low to High</option>
+                            <option>Price: High to Low</option>
+                            <option>Discount: Highest</option>
+                            <option>Newest</option>
+                        </select>
+                        <button class="btn btn-light">
+                            <i class="fas fa-filter"></i> Filter
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sale Products Grid -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Sale Product 1 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="product-card card h-100 position-relative">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=300&h=200&q=80&fit=crop" class="card-img-top product-image" alt="Nike Air Max Sale">
+                            <button class="wishlist-btn" data-product-id="nike-air-max-sale">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <span class="badge bg-danger position-absolute top-0 start-0 m-2">50% OFF</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="product-title">Nike Air Max 270</h5>
+                            <div class="product-rating mb-2">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span class="ms-2 text-muted">(4.8)</span>
+                            </div>
+                            <div class="d-flex align-items-center mb-2">
+                                <span class="h5 text-primary-custom mb-0 me-2">$75.00</span>
+                                <span class="text-muted text-decoration-line-through">$150.00</span>
+                            </div>
+                            <p class="text-muted small">Sizes: 7-12 US</p>
+                            <button class="btn btn-primary w-100 add-to-cart-btn" 
+                                    data-product-id="nike-air-max-sale"
+                                    data-product-name="Nike Air Max 270"
+                                    data-product-price="75.00"
+                                    data-product-image="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=300&h=200&q=80&fit=crop">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sale Product 2 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="product-card card h-100 position-relative">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=300&h=200&q=80&fit=crop" class="card-img-top product-image" alt="Adidas Stan Smith Sale">
+                            <button class="wishlist-btn" data-product-id="adidas-stan-smith-sale">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <span class="badge bg-danger position-absolute top-0 start-0 m-2">40% OFF</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="product-title">Adidas Stan Smith</h5>
+                            <div class="product-rating mb-2">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span class="ms-2 text-muted">(4.6)</span>
+                            </div>
+                            <div class="d-flex align-items-center mb-2">
+                                <span class="h5 text-primary-custom mb-0 me-2">$48.00</span>
+                                <span class="text-muted text-decoration-line-through">$80.00</span>
+                            </div>
+                            <p class="text-muted small">Sizes: 7-12 US</p>
+                            <button class="btn btn-primary w-100 add-to-cart-btn" 
+                                    data-product-id="adidas-stan-smith-sale"
+                                    data-product-name="Adidas Stan Smith"
+                                    data-product-price="48.00"
+                                    data-product-image="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=300&h=200&q=80&fit=crop">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sale Product 3 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="product-card card h-100 position-relative">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=300&h=200&q=80&fit=crop" class="card-img-top product-image" alt="Converse Chuck Sale">
+                            <button class="wishlist-btn" data-product-id="converse-chuck-sale">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <span class="badge bg-danger position-absolute top-0 start-0 m-2">30% OFF</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="product-title">Converse Chuck Taylor</h5>
+                            <div class="product-rating mb-2">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span class="ms-2 text-muted">(4.7)</span>
+                            </div>
+                            <div class="d-flex align-items-center mb-2">
+                                <span class="h5 text-primary-custom mb-0 me-2">$45.50</span>
+                                <span class="text-muted text-decoration-line-through">$65.00</span>
+                            </div>
+                            <p class="text-muted small">Sizes: 7-12 US</p>
+                            <button class="btn btn-primary w-100 add-to-cart-btn" 
+                                    data-product-id="converse-chuck-sale"
+                                    data-product-name="Converse Chuck Taylor"
+                                    data-product-price="45.50"
+                                    data-product-image="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=300&h=200&q=80&fit=crop">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sale Product 4 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="product-card card h-100 position-relative">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=300&h=200&q=80&fit=crop" class="card-img-top product-image" alt="Vans Old Skool Sale">
+                            <button class="wishlist-btn" data-product-id="vans-old-skool-sale">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <span class="badge bg-danger position-absolute top-0 start-0 m-2">35% OFF</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="product-title">Vans Old Skool</h5>
+                            <div class="product-rating mb-2">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span class="ms-2 text-muted">(4.5)</span>
+                            </div>
+                            <div class="d-flex align-items-center mb-2">
+                                <span class="h5 text-primary-custom mb-0 me-2">$45.50</span>
+                                <span class="text-muted text-decoration-line-through">$70.00</span>
+                            </div>
+                            <p class="text-muted small">Sizes: 7-12 US</p>
+                            <button class="btn btn-primary w-100 add-to-cart-btn" 
+                                    data-product-id="vans-old-skool-sale"
+                                    data-product-name="Vans Old Skool"
+                                    data-product-price="45.50"
+                                    data-product-image="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=300&h=200&q=80&fit=crop">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sale Product 5 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="product-card card h-100 position-relative">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=300&h=200&q=80&fit=crop" class="card-img-top product-image" alt="Puma Suede Sale">
+                            <button class="wishlist-btn" data-product-id="puma-suede-sale">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <span class="badge bg-danger position-absolute top-0 start-0 m-2">25% OFF</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="product-title">Puma Suede</h5>
+                            <div class="product-rating mb-2">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span class="ms-2 text-muted">(4.6)</span>
+                            </div>
+                            <div class="d-flex align-items-center mb-2">
+                                <span class="h5 text-primary-custom mb-0 me-2">$60.00</span>
+                                <span class="text-muted text-decoration-line-through">$80.00</span>
+                            </div>
+                            <p class="text-muted small">Sizes: 7-12 US</p>
+                            <button class="btn btn-primary w-100 add-to-cart-btn" 
+                                    data-product-id="puma-suede-sale"
+                                    data-product-name="Puma Suede"
+                                    data-product-price="60.00"
+                                    data-product-image="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=300&h=200&q=80&fit=crop">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sale Product 6 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="product-card card h-100 position-relative">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=300&h=200&q=80&fit=crop" class="card-img-top product-image" alt="New Balance Sale">
+                            <button class="wishlist-btn" data-product-id="new-balance-sale">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <span class="badge bg-danger position-absolute top-0 start-0 m-2">45% OFF</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="product-title">New Balance 990</h5>
+                            <div class="product-rating mb-2">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span class="ms-2 text-muted">(4.8)</span>
+                            </div>
+                            <div class="d-flex align-items-center mb-2">
+                                <span class="h5 text-primary-custom mb-0 me-2">$101.75</span>
+                                <span class="text-muted text-decoration-line-through">$185.00</span>
+                            </div>
+                            <p class="text-muted small">Sizes: 7-12 US</p>
+                            <button class="btn btn-primary w-100 add-to-cart-btn" 
+                                    data-product-id="new-balance-sale"
+                                    data-product-name="New Balance 990"
+                                    data-product-price="101.75"
+                                    data-product-image="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=300&h=200&q=80&fit=crop">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sale Product 7 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="product-card card h-100 position-relative">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=300&h=200&q=80&fit=crop" class="card-img-top product-image" alt="Reebok Classic Sale">
+                            <button class="wishlist-btn" data-product-id="reebok-classic-sale">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <span class="badge bg-danger position-absolute top-0 start-0 m-2">20% OFF</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="product-title">Reebok Classic</h5>
+                            <div class="product-rating mb-2">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span class="ms-2 text-muted">(4.4)</span>
+                            </div>
+                            <div class="d-flex align-items-center mb-2">
+                                <span class="h5 text-primary-custom mb-0 me-2">$72.00</span>
+                                <span class="text-muted text-decoration-line-through">$90.00</span>
+                            </div>
+                            <p class="text-muted small">Sizes: 7-12 US</p>
+                            <button class="btn btn-primary w-100 add-to-cart-btn" 
+                                    data-product-id="reebok-classic-sale"
+                                    data-product-name="Reebok Classic"
+                                    data-product-price="72.00"
+                                    data-product-image="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=300&h=200&q=80&fit=crop">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sale Product 8 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="product-card card h-100 position-relative">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=300&h=200&q=80&fit=crop" class="card-img-top product-image" alt="Jordan 1 Sale">
+                            <button class="wishlist-btn" data-product-id="jordan-1-sale">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <span class="badge bg-danger position-absolute top-0 start-0 m-2">15% OFF</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="product-title">Jordan 1 Retro</h5>
+                            <div class="product-rating mb-2">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span class="ms-2 text-muted">(4.6)</span>
+                            </div>
+                            <div class="d-flex align-items-center mb-2">
+                                <span class="h5 text-primary-custom mb-0 me-2">$144.50</span>
+                                <span class="text-muted text-decoration-line-through">$170.00</span>
+                            </div>
+                            <p class="text-muted small">Sizes: 7-12 US</p>
+                            <button class="btn btn-primary w-100 add-to-cart-btn" 
+                                    data-product-id="jordan-1-sale"
+                                    data-product-name="Jordan 1 Retro"
+                                    data-product-price="144.50"
+                                    data-product-image="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=300&h=200&q=80&fit=crop">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h3 class="fw-bold mb-3">Stay Updated on Sales</h3>
+                    <p class="lead mb-0">Get notified about exclusive deals and flash sales before anyone else.</p>
+                </div>
+                <div class="col-lg-6">
+                    <form id="newsletter-form" class="d-flex gap-2">
+                        <input type="email" class="form-control" placeholder="Enter your email" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5><i class="fas fa-shoe-prints me-2"></i>SneakHub</h5>
+                    <p class="text-muted">Your premier destination for premium sneakers and customization services. Quality, style, and comfort in every step.</p>
+                    <div class="social-links">
+                        <a href="https://facebook.com/sneakhub"><i class="fab fa-facebook"></i></a>
+                        <a href="https://twitter.com/sneakhub"><i class="fab fa-twitter"></i></a>
+                        <a href="https://instagram.com/sneakhub"><i class="fab fa-instagram"></i></a>
+                        <a href="https://youtube.com/sneakhub"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Products</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="male.html">Men's Shoes</a></li>
+                        <li><a href="women.html">Women's Shoes</a></li>
+                        <li><a href="kids.html">Kids' Shoes</a></li>
+                        <li><a href="sport.html">Sports Shoes</a></li>
+                        <li><a href="trend.html">Trending</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Services</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="service.html">Customization</a></li>
+                        <li><a href="service.html">Size Guide</a></li>
+                        <li><a href="service.html">Shoe Care</a></li>
+                        <li><a href="service.html">Repairs</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Company</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="sale.html">Sale</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Support</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="shipping.html">Shipping</a></li>
+                        <li><a href="returns.html">Returns</a></li>
+                        <li><a href="size-guide.html">Size Guide</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <hr class="my-4">
+            
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0 text-muted">&copy; 2025 SneakHub. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="privacy.html" class="text-muted me-3">Privacy Policy</a>
+                    <a href="terms.html" class="text-muted">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div class="modal fade" id="cartModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">
+                        <i class="fas fa-shopping-cart me-2"></i>Shopping Cart
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="cart-items">
+                        <!-- Cart items will be populated here -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="d-flex justify-content-between w-100">
+                        <div>
+                            <div class="d-flex justify-content-between">
+                                <span>Subtotal:</span>
+                                <span id="cart-subtotal">$0.00</span>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <span>Tax:</span>
+                                <span id="cart-tax">$0.00</span>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <span>Shipping:</span>
+                                <span id="cart-shipping">$0.00</span>
+                            </div>
+                            <hr>
+                            <div class="d-flex justify-content-between fw-bold">
+                                <span>Total:</span>
+                                <span id="cart-total" class="text-primary-custom">$0.00</span>
+                            </div>
+                        </div>
+                        <div class="d-flex gap-2">
+                            <button class="btn btn-outline-secondary" onclick="clearCart()">Clear Cart</button>
+                            <button class="btn btn-primary" onclick="proceedToCheckout()">Checkout</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <!-- Custom JS -->
+    <script src="js/app.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/forms.js"></script>
+    <script src="js/slider.js"></script>
+    <script src="js/cart.js"></script>
+
+    <!-- Countdown Timer Script -->
+    <script>
+        // Countdown timer for sale
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const saleEnd = now + (24 * 60 * 60 * 1000); // 24 hours from now
+            const distance = saleEnd - now;
+            
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            document.getElementById("countdown").innerHTML = hours + "h " + minutes + "m " + seconds + "s";
+            
+            if (distance < 0) {
+                document.getElementById("countdown").innerHTML = "EXPIRED";
+            }
+        }
+        
+        // Update countdown every second
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
 </body>
 </html>

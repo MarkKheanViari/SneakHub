@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Returns & Refunds - SneakHub</title>
+    <meta name="description" content="Learn about SneakHub's return policy, refund process, and how to return items. Easy returns within 30 days.">
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Boxicons -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-shoe-prints me-2"></i>SneakHub
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Products
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="male.html">Men's Shoes</a></li>
+                            <li><a class="dropdown-item" href="women.html">Women's Shoes</a></li>
+                            <li><a class="dropdown-item" href="kids.html">Kids' Shoes</a></li>
+                            <li><a class="dropdown-item" href="sport.html">Sports Shoes</a></li>
+                            <li><a class="dropdown-item" href="trend.html">Trending</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="team.html">Team</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="service.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                
+                <!-- Search Bar -->
+                <div class="d-flex align-items-center me-3">
+                    <div class="position-relative">
+                        <input type="text" class="form-control" placeholder="Search products..." id="search-input">
+                        <div id="search-results" class="position-absolute bg-white border rounded shadow-lg" style="top: 100%; left: 0; right: 0; z-index: 1000; display: none; max-height: 300px; overflow-y: auto;"></div>
+                    </div>
+                </div>
+                
+                <!-- Cart -->
+                <div class="d-flex align-items-center">
+                    <button class="btn btn-outline-light position-relative" id="cart-modal-trigger">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-badge" id="cart-count" style="display: none;">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header bg-gradient-custom text-white py-5" style="margin-top: 76px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="display-4 fw-bold mb-3">Returns & Refunds</h1>
+                    <p class="lead">Easy returns within 30 days. We make it simple to return items you're not satisfied with.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Return Policy Overview -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <!-- Policy Summary -->
+                    <div class="row mb-5">
+                        <div class="col-md-4 mb-4">
+                            <div class="card border-0 shadow-sm h-100 text-center">
+                                <div class="card-body">
+                                    <div class="bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                                        <i class="fas fa-calendar-alt fa-lg"></i>
+                                    </div>
+                                    <h5 class="card-title">30-Day Returns</h5>
+                                    <p class="text-muted">Return any item within 30 days of delivery for a full refund.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="card border-0 shadow-sm h-100 text-center">
+                                <div class="card-body">
+                                    <div class="bg-primary-custom text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                                        <i class="fas fa-undo fa-lg"></i>
+                                    </div>
+                                    <h5 class="card-title">Easy Process</h5>
+                                    <p class="text-muted">Simple online return process with prepaid return labels.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="card border-0 shadow-sm h-100 text-center">
+                                <div class="card-body">
+                                    <div class="bg-warning text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                                        <i class="fas fa-dollar-sign fa-lg"></i>
+                                    </div>
+                                    <h5 class="card-title">Full Refund</h5>
+                                    <p class="text-muted">Get your money back quickly and securely to your original payment method.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Return Policy Details -->
+                    <div class="mb-5">
+                        <h2 class="h3 text-primary-custom mb-4">
+                            <i class="fas fa-file-contract me-2"></i>Return Policy Details
+                        </h2>
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <h5 class="text-success mb-3">What Can Be Returned</h5>
+                                        <ul class="list-unstyled">
+                                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Unworn items in original condition</li>
+                                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Items with original tags attached</li>
+                                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Items in original packaging</li>
+                                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Defective or damaged items</li>
+                                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Wrong size or style</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <h5 class="text-danger mb-3">What Cannot Be Returned</h5>
+                                        <ul class="list-unstyled">
+                                            <li class="mb-2"><i class="fas fa-times text-danger me-2"></i>Worn or used items</li>
+                                            <li class="mb-2"><i class="fas fa-times text-danger me-2"></i>Customized items (unless defective)</li>
+                                            <li class="mb-2"><i class="fas fa-times text-danger me-2"></i>Items without original packaging</li>
+                                            <li class="mb-2"><i class="fas fa-times text-danger me-2"></i>Items returned after 30 days</li>
+                                            <li class="mb-2"><i class="fas fa-times text-danger me-2"></i>Items damaged by customer</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- How to Return -->
+                    <div class="mb-5">
+                        <h2 class="h3 text-primary-custom mb-4">
+                            <i class="fas fa-list-ol me-2"></i>How to Return an Item
+                        </h2>
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <div class="card border-0 shadow-sm">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-6 mb-4">
+                                                <div class="d-flex align-items-start">
+                                                    <div class="bg-primary-custom text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px; min-width: 40px;">
+                                                        <span class="fw-bold">1</span>
+                                                    </div>
+                                                    <div>
+                                                        <h6>Start Your Return</h6>
+                                                        <p class="text-muted small mb-0">Log into your account and go to "My Orders" to initiate a return.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 mb-4">
+                                                <div class="d-flex align-items-start">
+                                                    <div class="bg-primary-custom text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px; min-width: 40px;">
+                                                        <span class="fw-bold">2</span>
+                                                    </div>
+                                                    <div>
+                                                        <h6>Select Items</h6>
+                                                        <p class="text-muted small mb-0">Choose the items you want to return and provide a reason.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 mb-4">
+                                                <div class="d-flex align-items-start">
+                                                    <div class="bg-primary-custom text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px; min-width: 40px;">
+                                                        <span class="fw-bold">3</span>
+                                                    </div>
+                                                    <div>
+                                                        <h6>Print Label</h6>
+                                                        <p class="text-muted small mb-0">Download and print the prepaid return shipping label.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 mb-4">
+                                                <div class="d-flex align-items-start">
+                                                    <div class="bg-primary-custom text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px; min-width: 40px;">
+                                                        <span class="fw-bold">4</span>
+                                                    </div>
+                                                    <div>
+                                                        <h6>Package & Ship</h6>
+                                                        <p class="text-muted small mb-0">Package items securely and drop off at any carrier location.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="card bg-light">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Return Timeline</h5>
+                                        <ul class="list-unstyled small">
+                                            <li class="mb-2"><strong>Processing:</strong> 1-2 business days</li>
+                                            <li class="mb-2"><strong>Refund:</strong> 5-7 business days</li>
+                                            <li class="mb-2"><strong>Credit Card:</strong> 1-2 billing cycles</li>
+                                            <li class="mb-2"><strong>PayPal:</strong> 3-5 business days</li>
+                                        </ul>
+                                        <hr>
+                                        <h6>Need Help?</h6>
+                                        <p class="small text-muted mb-2">Contact our customer service team for assistance with returns.</p>
+                                        <a href="contact.html" class="btn btn-sm btn-primary">Contact Us</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Refund Information -->
+                    <div class="mb-5">
+                        <h2 class="h3 text-primary-custom mb-4">
+                            <i class="fas fa-credit-card me-2"></i>Refund Information
+                        </h2>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="card border-0 shadow-sm">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Refund Methods</h5>
+                                        <ul class="list-unstyled">
+                                            <li class="mb-2"><i class="fas fa-credit-card text-primary me-2"></i><strong>Credit Card:</strong> Refunded to original card</li>
+                                            <li class="mb-2"><i class="fab fa-paypal text-primary me-2"></i><strong>PayPal:</strong> Refunded to PayPal account</li>
+                                            <li class="mb-2"><i class="fas fa-gift text-primary me-2"></i><strong>Store Credit:</strong> Available immediately</li>
+                                            <li class="mb-2"><i class="fas fa-university text-primary me-2"></i><strong>Bank Transfer:</strong> For large amounts</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="card border-0 shadow-sm">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Refund Timeline</h5>
+                                        <div class="table-responsive">
+                                            <table class="table table-sm">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Payment Method</th>
+                                                        <th>Processing Time</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Credit Card</td>
+                                                        <td>5-7 business days</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>PayPal</td>
+                                                        <td>3-5 business days</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Store Credit</td>
+                                                        <td>Immediate</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Bank Transfer</td>
+                                                        <td>7-10 business days</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Exchange Policy -->
+                    <div class="mb-5">
+                        <h2 class="h3 text-primary-custom mb-4">
+                            <i class="fas fa-exchange-alt me-2"></i>Exchange Policy
+                        </h2>
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-lg-8">
+                                        <h5>Size Exchanges</h5>
+                                        <p class="text-muted">Need a different size? We make it easy to exchange for the perfect fit.</p>
+                                        <ul class="list-unstyled">
+                                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Free size exchanges within 30 days</li>
+                                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Same item, different size only</li>
+                                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Prepaid return shipping included</li>
+                                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>New item shipped once return is received</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="bg-light p-3 rounded">
+                                            <h6>Exchange Process</h6>
+                                            <ol class="small mb-0">
+                                                <li>Return original item</li>
+                                                <li>Place new order for correct size</li>
+                                                <li>We'll process refund for returned item</li>
+                                                <li>New item ships immediately</li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Special Cases -->
+                    <div class="mb-5">
+                        <h2 class="h3 text-primary-custom mb-4">
+                            <i class="fas fa-exclamation-circle me-2"></i>Special Cases
+                        </h2>
+                        <div class="row">
+                            <div class="col-lg-6 mb-4">
+                                <div class="card border-warning">
+                                    <div class="card-body">
+                                        <h5 class="card-title text-warning">
+                                            <i class="fas fa-tools me-2"></i>Defective Items
+                                        </h5>
+                                        <p class="text-muted">Items with manufacturing defects are covered beyond the 30-day return window.</p>
+                                        <ul class="list-unstyled small">
+                                            <li><i class="fas fa-check text-success me-2"></i>Full refund or replacement</li>
+                                            <li><i class="fas fa-check text-success me-2"></i>Free return shipping</li>
+                                            <li><i class="fas fa-check text-success me-2"></i>Extended return window</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 mb-4">
+                                <div class="card border-info">
+                                    <div class="card-body">
+                                        <h5 class="card-title text-info">
+                                            <i class="fas fa-paint-brush me-2"></i>Customized Items
+                                        </h5>
+                                        <p class="text-muted">Customized items have special return conditions.</p>
+                                        <ul class="list-unstyled small">
+                                            <li><i class="fas fa-times text-danger me-2"></i>No returns unless defective</li>
+                                            <li><i class="fas fa-check text-success me-2"></i>Defect coverage included</li>
+                                            <li><i class="fas fa-check text-success me-2"></i>Quality guarantee applies</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div class="text-center">
+                        <h3 class="mb-3">Questions About Returns?</h3>
+                        <p class="lead mb-4">Our customer service team is here to help with any return questions or concerns.</p>
+                        <div class="d-flex gap-3 justify-content-center flex-wrap">
+                            <a href="contact.html" class="btn btn-primary btn-lg">Contact Us</a>
+                            <a href="tel:+1-555-SNEAKER" class="btn btn-outline-primary btn-lg">
+                                <i class="fas fa-phone me-2"></i>Call Us
+                            </a>
+                            <a href="mailto:returns@sneakhub.com" class="btn btn-outline-primary btn-lg">
+                                <i class="fas fa-envelope me-2"></i>Email Us
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5><i class="fas fa-shoe-prints me-2"></i>SneakHub</h5>
+                    <p class="text-muted">Your premier destination for premium sneakers and customization services. Quality, style, and comfort in every step.</p>
+                    <div class="social-links">
+                        <a href="https://facebook.com/sneakhub"><i class="fab fa-facebook"></i></a>
+                        <a href="https://twitter.com/sneakhub"><i class="fab fa-twitter"></i></a>
+                        <a href="https://instagram.com/sneakhub"><i class="fab fa-instagram"></i></a>
+                        <a href="https://youtube.com/sneakhub"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Products</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="male.html">Men's Shoes</a></li>
+                        <li><a href="women.html">Women's Shoes</a></li>
+                        <li><a href="kids.html">Kids' Shoes</a></li>
+                        <li><a href="sport.html">Sports Shoes</a></li>
+                        <li><a href="trend.html">Trending</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Services</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="service.html">Customization</a></li>
+                        <li><a href="size-guide.html">Size Guide</a></li>
+                        <li><a href="service.html">Shoe Care</a></li>
+                        <li><a href="service.html">Repairs</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Company</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="team.html">Our Team</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="sale.html">Sale</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Support</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="shipping.html">Shipping</a></li>
+                        <li><a href="returns.html">Returns</a></li>
+                        <li><a href="size-guide.html">Size Guide</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <hr class="my-4">
+            
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0 text-muted">&copy; 2025 SneakHub. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="privacy.html" class="text-muted me-3">Privacy Policy</a>
+                    <a href="terms.html" class="text-muted">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div class="modal fade" id="cartModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">
+                        <i class="fas fa-shopping-cart me-2"></i>Shopping Cart
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="cart-items">
+                        <!-- Cart items will be populated here -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="d-flex justify-content-between w-100">
+                        <div>
+                            <div class="d-flex justify-content-between">
+                                <span>Subtotal:</span>
+                                <span id="cart-subtotal">$0.00</span>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <span>Tax:</span>
+                                <span id="cart-tax">$0.00</span>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <span>Shipping:</span>
+                                <span id="cart-shipping">$0.00</span>
+                            </div>
+                            <hr>
+                            <div class="d-flex justify-content-between fw-bold">
+                                <span>Total:</span>
+                                <span id="cart-total" class="text-primary-custom">$0.00</span>
+                            </div>
+                        </div>
+                        <div class="d-flex gap-2">
+                            <button class="btn btn-outline-secondary" onclick="clearCart()">Clear Cart</button>
+                            <button class="btn btn-primary" onclick="proceedToCheckout()">Checkout</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <!-- Custom JS -->
+    <script src="js/app.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/forms.js"></script>
+    <script src="js/cart.js"></script>
+</body>
+</html>
+

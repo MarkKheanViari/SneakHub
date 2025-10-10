@@ -1,55 +1,407 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Modern Blog</title>
-  <link rel="stylesheet" href="CSS/blog.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - SneakHub</title>
+    <meta name="description" content="Stay updated with the latest sneaker trends, care tips, and styling guides. Your go-to source for all things sneakers.">
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Boxicons -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-shoe-prints me-2"></i>SneakHub
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Products
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="male.html">Men's Shoes</a></li>
+                            <li><a class="dropdown-item" href="women.html">Women's Shoes</a></li>
+                            <li><a class="dropdown-item" href="kids.html">Kids' Shoes</a></li>
+                            <li><a class="dropdown-item" href="sport.html">Sports Shoes</a></li>
+                            <li><a class="dropdown-item" href="trend.html">Trending</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="service.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                
+                <!-- Search Bar -->
+                <div class="d-flex align-items-center me-3">
+                    <div class="position-relative">
+                        <input type="text" class="form-control" placeholder="Search products..." id="search-input">
+                        <div id="search-results" class="position-absolute bg-white border rounded shadow-lg" style="top: 100%; left: 0; right: 0; z-index: 1000; display: none; max-height: 300px; overflow-y: auto;"></div>
+                    </div>
+                </div>
+                
+                <!-- Cart -->
+                <div class="d-flex align-items-center">
+                    <button class="btn btn-outline-light position-relative" id="cart-modal-trigger">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-badge" id="cart-count" style="display: none;">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-  <!-- Video Header -->
-  <header class="video-header">
-    <div class="video-container">
-      <video autoplay muted loop>
-        <source src="Vid/vid.mp4" type="video/mp4">
-      </video>
-    </div>
-  </header>
-
-  <!-- Back Button -->
-  <a href="index.html" class="back-button">&lt;</a>
-
-  <!-- Blog Sections -->
-  <div class="container">
-    <section class="blog-section">
-      <h2>Mens</h2>
-      <a href="male.html">
-        <img src="img blog/img1.png" alt="Mens Collection">
-      </a>
+    <!-- Page Header -->
+    <section class="py-5 mt-5 bg-gradient-custom text-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h1 class="display-4 fw-bold mb-3">Sneaker Blog</h1>
+                    <p class="lead mb-0">Stay updated with the latest sneaker trends, care tips, and styling guides.</p>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section class="blog-section">
-      <h2>Womens</h2>
-      <a href="women.html">
-        <img src="img blog/img4.png" alt="Womens Collection">
-      </a>
+    <!-- Featured Post -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="card border-0 shadow-lg mb-4">
+                        <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=800&h=400&q=80&fit=crop" class="card-img-top" alt="Featured Post">
+                        <div class="card-body p-4">
+                            <div class="d-flex align-items-center mb-3">
+                                <span class="badge bg-primary-custom me-2">Featured</span>
+                                <small class="text-muted">October 15, 2025</small>
+                            </div>
+                            <h2 class="card-title h3">The Ultimate Guide to Sneaker Care: Keep Your Kicks Fresh</h2>
+                            <p class="card-text">Learn the essential tips and tricks to maintain your sneakers in pristine condition. From cleaning techniques to storage solutions, this comprehensive guide covers everything you need to know about sneaker care.</p>
+                            <div class="d-flex align-items-center">
+                                <img src="garcia.png" alt="Author" class="rounded-circle me-2" width="40" height="40">
+                                <div>
+                                    <small class="text-muted">By Garcia, Jericho</small>
+                                    <br>
+                                    <small class="text-muted">Trend Research & Marketing</small>
+                                </div>
+                                <a href="#" class="btn btn-primary ms-auto">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Sidebar -->
+                <div class="col-lg-4">
+                    <div class="card border-0 shadow-sm mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Categories</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="#" class="text-decoration-none">Trends</a></li>
+                                <li><a href="#" class="text-decoration-none">Care Tips</a></li>
+                                <li><a href="#" class="text-decoration-none">Styling</a></li>
+                                <li><a href="#" class="text-decoration-none">Reviews</a></li>
+                                <li><a href="#" class="text-decoration-none">News</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">Recent Posts</h5>
+                            <div class="d-flex mb-3">
+                                <img src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=60&h=60&q=80&fit=crop" class="rounded me-3" alt="Recent Post">
+                                <div>
+                                    <h6 class="mb-1">Top 10 Sneakers of 2025</h6>
+                                    <small class="text-muted">Oct 10, 2025</small>
+                                </div>
+                            </div>
+                            <div class="d-flex mb-3">
+                                <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=60&h=60&q=80&fit=crop" class="rounded me-3" alt="Recent Post">
+                                <div>
+                                    <h6 class="mb-1">How to Style White Sneakers</h6>
+                                    <small class="text-muted">Oct 8, 2025</small>
+                                </div>
+                            </div>
+                            <div class="d-flex">
+                                <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=60&h=60&q=80&fit=crop" class="rounded me-3" alt="Recent Post">
+                                <div>
+                                    <h6 class="mb-1">Sneaker Authentication Guide</h6>
+                                    <small class="text-muted">Oct 5, 2025</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section class="blog-section">
-      <h2>Sports</h2>
-      <a href="sport.html">
-        <img src="img blog/img3.png" alt="Sports Shoes">
-      </a>
+    <!-- Blog Posts Grid -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Blog Post 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=400&h=250&q=80&fit=crop" class="card-img-top" alt="Top 10 Sneakers">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-2">
+                                <span class="badge bg-secondary me-2">Trends</span>
+                                <small class="text-muted">October 10, 2025</small>
+                            </div>
+                            <h5 class="card-title">Top 10 Sneakers of 2025</h5>
+                            <p class="card-text">Discover the most popular and sought-after sneakers that defined 2025. From limited releases to mainstream hits, these are the shoes that everyone wanted.</p>
+                            <div class="d-flex align-items-center">
+                                <img src="garcia.png" alt="Author" class="rounded-circle me-2" width="30" height="30">
+                                <small class="text-muted">Garcia, Jericho</small>
+                                <a href="#" class="btn btn-sm btn-outline-primary ms-auto">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Post 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=400&h=250&q=80&fit=crop" class="card-img-top" alt="Styling Guide">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-2">
+                                <span class="badge bg-info me-2">Styling</span>
+                                <small class="text-muted">October 8, 2025</small>
+                            </div>
+                            <h5 class="card-title">How to Style White Sneakers</h5>
+                            <p class="card-text">White sneakers are versatile and timeless. Learn how to incorporate them into various outfits for different occasions and seasons.</p>
+                            <div class="d-flex align-items-center">
+                                <img src="lappay.png" alt="Author" class="rounded-circle me-2" width="30" height="30">
+                                <small class="text-muted">Lappay, Terrence</small>
+                                <a href="#" class="btn btn-sm btn-outline-primary ms-auto">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Post 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=400&h=250&q=80&fit=crop" class="card-img-top" alt="Authentication Guide">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-2">
+                                <span class="badge bg-warning me-2">Guide</span>
+                                <small class="text-muted">October 5, 2025</small>
+                            </div>
+                            <h5 class="card-title">Sneaker Authentication Guide</h5>
+                            <p class="card-text">Protect yourself from counterfeit sneakers with our comprehensive authentication guide. Learn the key indicators of authentic vs. fake sneakers.</p>
+                            <div class="d-flex align-items-center">
+                                <img src="francisco.png" alt="Author" class="rounded-circle me-2" width="30" height="30">
+                                <small class="text-muted">Francisco, Christian Lloyd</small>
+                                <a href="#" class="btn btn-sm btn-outline-primary ms-auto">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Post 4 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=400&h=250&q=80&fit=crop" class="card-img-top" alt="Cleaning Tips">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-2">
+                                <span class="badge bg-success me-2">Care</span>
+                                <small class="text-muted">October 3, 2025</small>
+                            </div>
+                            <h5 class="card-title">5 Essential Cleaning Tips for Sneakers</h5>
+                            <p class="card-text">Keep your sneakers looking brand new with these professional cleaning techniques. From basic maintenance to deep cleaning methods.</p>
+                            <div class="d-flex align-items-center">
+                                <img src="francisco.png" alt="Author" class="rounded-circle me-2" width="30" height="30">
+                                <small class="text-muted">Francisco, Christian Lloyd</small>
+                                <a href="#" class="btn btn-sm btn-outline-primary ms-auto">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Post 5 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=400&h=250&q=80&fit=crop" class="card-img-top" alt="Size Guide">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-2">
+                                <span class="badge bg-primary me-2">Guide</span>
+                                <small class="text-muted">November 30, 2025</small>
+                            </div>
+                            <h5 class="card-title">Complete Sneaker Size Guide</h5>
+                            <p class="card-text">Find the perfect fit with our comprehensive size guide. Learn about different sizing systems and how to measure your feet correctly.</p>
+                            <div class="d-flex align-items-center">
+                                <img src="guarin.png" alt="Author" class="rounded-circle me-2" width="30" height="30">
+                                <small class="text-muted">Guarin, Mark Renzo</small>
+                                <a href="#" class="btn btn-sm btn-outline-primary ms-auto">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Post 6 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=400&h=250&q=80&fit=crop" class="card-img-top" alt="Customization Ideas">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-2">
+                                <span class="badge bg-danger me-2">Custom</span>
+                                <small class="text-muted">November 28, 2025</small>
+                            </div>
+                            <h5 class="card-title">Creative Customization Ideas</h5>
+                            <p class="card-text">Get inspired with these amazing sneaker customization ideas. From simple color changes to complex artistic designs, unleash your creativity.</p>
+                            <div class="d-flex align-items-center">
+                                <img src="lappay.png" alt="Author" class="rounded-circle me-2" width="30" height="30">
+                                <small class="text-muted">Lappay, Terrence</small>
+                                <a href="#" class="btn btn-sm btn-outline-primary ms-auto">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section class="blog-section">
-      <h2>Kids</h2>
-      <a href="kids.html">
-        <img src="img blog/img2.png" alt="Kids Shoes">
-      </a>
+    <!-- Newsletter Section -->
+    <section class="py-5 bg-gradient-custom text-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h3 class="fw-bold mb-3">Stay Updated</h3>
+                    <p class="lead mb-0">Get the latest blog posts and sneaker news delivered to your inbox.</p>
+                </div>
+                <div class="col-lg-6">
+                    <form id="newsletter-form" class="d-flex gap-2">
+                        <input type="email" class="form-control" placeholder="Enter your email" required>
+                        <button type="submit" class="btn btn-light">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </section>
-  </div>
 
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5><i class="fas fa-shoe-prints me-2"></i>SneakHub</h5>
+                    <p class="text-muted">Your premier destination for premium sneakers and customization services. Quality, style, and comfort in every step.</p>
+                    <div class="social-links">
+                        <a href="https://facebook.com/sneakhub"><i class="fab fa-facebook"></i></a>
+                        <a href="https://twitter.com/sneakhub"><i class="fab fa-twitter"></i></a>
+                        <a href="https://instagram.com/sneakhub"><i class="fab fa-instagram"></i></a>
+                        <a href="https://youtube.com/sneakhub"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Products</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="male.html">Men's Shoes</a></li>
+                        <li><a href="women.html">Women's Shoes</a></li>
+                        <li><a href="kids.html">Kids' Shoes</a></li>
+                        <li><a href="sport.html">Sports Shoes</a></li>
+                        <li><a href="trend.html">Trending</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Services</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="service.html">Customization</a></li>
+                        <li><a href="service.html">Size Guide</a></li>
+                        <li><a href="service.html">Shoe Care</a></li>
+                        <li><a href="service.html">Repairs</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Company</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="sale.html">Sale</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Support</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="shipping.html">Shipping</a></li>
+                        <li><a href="returns.html">Returns</a></li>
+                        <li><a href="size-guide.html">Size Guide</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <hr class="my-4">
+            
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0 text-muted">&copy; 2025 SneakHub. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="privacy.html" class="text-muted me-3">Privacy Policy</a>
+                    <a href="terms.html" class="text-muted">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <!-- Custom JS -->
+    <script src="js/app.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/forms.js"></script>
+    <script src="js/slider.js"></script>
+    <script src="js/cart.js"></script>
 </body>
 </html>
